@@ -38,4 +38,4 @@ static void view() {
 		System.out.println("구구단 프로그램 종료");
 		System.exit(0);
 	}
-}https://github.com/campus-devil1032/campus-java-gugudan.git
+}
