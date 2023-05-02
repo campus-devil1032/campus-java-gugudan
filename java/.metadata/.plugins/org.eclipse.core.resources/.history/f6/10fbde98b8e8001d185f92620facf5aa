@@ -1,0 +1,16 @@
+
+public class Controller {
+	public boolean isValid(Model model) {
+		try {
+			int intData = Integer.parseInt(model.getStringInputData());
+			if(!(0<intData&&intData<9)){
+				return false;
+			}
+			model.setInputData(intData);
+		} catch (NumberFormatException e) {
+			System.out.println("숫자로 변형될수 없는 값이 들어왔습니다.");
+			return false;
+		}
+		return true;
+	}
+}

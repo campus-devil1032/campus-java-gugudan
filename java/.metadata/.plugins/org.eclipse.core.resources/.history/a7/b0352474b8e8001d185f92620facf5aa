@@ -1,0 +1,18 @@
+
+public class Model {
+	private int inputData;
+	private String stringInputData;
+	
+	public String getStringInputData() {
+		return stringInputData;
+	}
+	public void setStringInputData(String stringInputData) {
+		this.stringInputData = stringInputData;
+	}
+	public int getInputData() {
+		return inputData;
+	}
+	public void setInputData(int inputData) {
+		this.inputData = inputData;
+	}
+}

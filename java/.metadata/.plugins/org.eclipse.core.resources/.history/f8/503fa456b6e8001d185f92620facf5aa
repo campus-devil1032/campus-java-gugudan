@@ -1,0 +1,13 @@
+
+public class Controller {
+	public boolean isValid(Model model) {
+		try {
+			int integerData = Integer.parseInt(model.getStringInputData());
+			model.setInputData(integerData);
+		} catch (NumberFormatException e) {
+			return false;
+		}
+		
+		return true;
+	}
+}

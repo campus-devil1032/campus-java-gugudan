@@ -1,0 +1,16 @@
+
+public class Model {
+	private int inputData;
+	private String stringinputData;
+
+	public int getInputData() {
+		return inputData;
+	}
+	public void setInputData(int inputData) {
+		this.inputData = inputData;
+	}
+	@Override
+	public String toString() {
+		return "Model [inputData=" + inputData + "]";
+	}
+}

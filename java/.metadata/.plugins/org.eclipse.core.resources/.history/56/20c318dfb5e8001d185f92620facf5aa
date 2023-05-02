@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class View {
+	String inputData;
+
+	void inPutView(){
+		System.out.println("출력 받으실 구구단을 입력해주세요.");
+		Scanner sc = new Scanner(System.in);
+		inputData = sc.next();
+	}
+
+	void outPutView(int inputData) {
+		for(int i=inputData;i<=9;i++) {
+			for(int j=1;j<=9;j++) {
+				System.out.println(i + " * " + j + " = " +i*j);							
+			}
+		}
+	}
+}

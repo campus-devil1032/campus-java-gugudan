@@ -1,0 +1,14 @@
+
+public class Controller {
+	public isValid(Model model) {
+		try {
+			int intData = Integer.parseInt(model.getStringInputData());
+			if(!(0<intData&&intData<9)){
+				model.getResult("1~9사이의 숫자가 아닙니다.")
+			}
+			model.setInputData(intData);
+		} catch (NumberFormatException e) {
+			model.setResult("숫자로 변형될수 없는 글자가 들어왔습니다");
+		}
+	}
+}

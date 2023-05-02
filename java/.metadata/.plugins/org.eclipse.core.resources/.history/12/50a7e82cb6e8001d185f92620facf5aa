@@ -1,0 +1,11 @@
+
+public class Controller {
+	public boolean isValid(String inputData) {
+		try {
+			Integer.parseInt(inputData);				
+		} catch (NumberFormatException e) {
+			return false;
+		}
+		return true;
+	}
+}

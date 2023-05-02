@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Model model = new Model();
+		View view = new View();
+		Controller controller = new Controller();
+		
+		view.inPutView(model);
+		if(controller.isValid(model)==true) {
+			view.outPutView(model);
+		}else {
+			System.out.println("1~9의 숫자 유효성 검사 통과 하지 못했습니다. ");
+		}
+			
+		view.outPutView(model);
+
+		
+		
+	}
+}
