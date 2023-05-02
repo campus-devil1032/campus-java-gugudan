@@ -1,0 +1,13 @@
+
+public class MyFirstClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello Campus World!");
+		System.out.println("뭐라했냐");
+		System.out.println("sout를 입력하고 ctrl+space를 누르세요");
+		
+
+	}
+
+}
