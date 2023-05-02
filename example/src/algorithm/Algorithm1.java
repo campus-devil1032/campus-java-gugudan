@@ -52,10 +52,10 @@ public class Algorithm1 {
 	}
 
 	public void overLapValue(int arr[]) {
-		int i, j,k, temp = 0, temp1 = 0;
+		int i, j, k, temp = 0, temp1 = 0;
 		j = arr.length;
 		for (i = 0; i < j; i++) {
-			for (k = i+1; k < j-1; k++) {
+			for (k = i + 1; k < j - 1; k++) {
 				if (arr[i] == arr[k]) {
 					temp = arr[i];
 				}
@@ -63,13 +63,30 @@ public class Algorithm1 {
 		}
 		System.out.println(temp);
 	}
-	public void findPrimeNumber(int a) {
-		int i;
-		for(i = a/2; i > 0 ; i--)
-		if(a % i == 0) {
-			System.out.println("소수");
-		}
-		else{System.out.println("아님");}
-	}
 
+	public void findPrimeNumber(int arr[]) {
+		int i, j, k, tmep = 0;
+		j = arr.length;
+		for (k = 0; k < j; k++) {
+			i = arr[k] / 2;
+			try {
+				while (true) {
+					if (i == 1) {
+						tmep = arr[k];
+						System.out.println(tmep + "이 수는 소수입니다.");
+						break;
+					} else if (arr[k] % i == 0) {
+						tmep = arr[k];
+						System.out.println(tmep + "이 수는 소수가 아닙니다.");
+						break;
+					}
+					i--;
+				}
+
+			} catch (Exception e) {
+				System.out.println("1은 소수입니다.");
+			}
+
+		}
+	}
 }

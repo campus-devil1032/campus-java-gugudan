@@ -9,7 +9,7 @@ public class Alalgorithm_Runner {
 		firstAlg.bubblesort(a); //버블정렬
 		firstAlg.maxValue(a); //최대값
 		firstAlg.overLapValue(a); //중복된 값 찾기 대신에 이중으로 중복은 아직까진..
-		
+		firstAlg.findPrimeNumber(a);
 	}
 
 }

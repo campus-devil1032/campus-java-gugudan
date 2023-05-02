@@ -16,7 +16,7 @@ public class Controller {
 		} else {
 			System.out.println("1~999안의 값을 입력하세요");
 		}
-		
+		sc.close();
 	}
-	
+
 }
