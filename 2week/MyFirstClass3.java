@@ -49,7 +49,7 @@ public class MyFirstClass3 {
 		try {
 			int num = Integer.parseInt(number);
 			if(num>999 || num<1) 
-					throw new DanValueOverflowException();
+					throw new DanValueOverflowException("잘못된 범위입니다.");
 		}catch(NumberFormatException e){
 			System.out.println("숫자를 입력해주세요.");
 			return false;
