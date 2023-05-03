@@ -1,0 +1,27 @@
+import java.util.Scanner;
+	
+public class GugudanException {
+
+	public static void main(String[] args) {
+		
+		int mtp; // 단 수
+		int i;
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("출력할 구구단 단 수를 입력하세요 : ");
+			mtp = sc.nextInt();
+			if (mtp > 999) {
+				System.out.println("1~999 사이의 값만 유효합니다.");
+			}
+			else {
+				System.out.println("*****"+mtp+"단*****");
+				for (i = 1; i <= 9; i++) {
+					System.out.println(mtp+" * "+i+" = "+mtp*i);
+				}
+				break;
+			}
+		}	
+	}
+}
+
