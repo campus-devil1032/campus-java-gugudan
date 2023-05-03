@@ -1,12 +1,10 @@
 package test;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Dto {
 	
 	private Scanner input = new Scanner(System.in);
 	private int dan;
-	//private String carModel;
 	private String Print;
 	
 	

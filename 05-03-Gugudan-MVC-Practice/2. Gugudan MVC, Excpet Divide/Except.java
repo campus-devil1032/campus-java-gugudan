@@ -9,7 +9,7 @@ public class Except {
 			try {
 				dan = input.nextInt();
 				if(dan>999 || dan<1)
-					System.out.println("1 ~ 999까지의 입력만 유효");
+					System.out.println("1 ~ 999까지의 정수 입력만 유효");
 				else
 					break;
 			}
@@ -17,7 +17,7 @@ public class Except {
 			catch (InputMismatchException e) { //Exception e, InputMismatchException e, IOException e
 				input = new Scanner(System.in);
 				System.out.println("예외발생! 잘못된 입력");
-				System.out.println("정수만 입력하세요");
+				System.out.println("1 ~ 999까지의 정수 입력만 유효");
 			}
 
 		}
