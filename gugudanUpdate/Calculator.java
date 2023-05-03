@@ -2,12 +2,6 @@ package gugudanUpdate;
 
 import java.util.Scanner;
 
-class ConditionException extends Exception {
-	ConditionException(String message) {
-		super(message);
-	}
-}
-
 class Calculator {
 	int dan;
 //	public Calculator(int dan) {
@@ -30,17 +24,5 @@ class Calculator {
 		for (int i = 1; i <= 9; i++) {
 			System.out.println(dan + " * " + i + " = " + dan * i);
 		}
-	}
-}
-
-public class GugudanUpdate {
-	public static void main(String[] args) {
-		try {
-			Calculator c = new Calculator();
-			c.getCalculator();
-		} catch (ConditionException e) {
-			System.out.println(e.getMessage());
-		}
-
 	}
 }
