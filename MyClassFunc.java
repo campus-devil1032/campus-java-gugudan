@@ -75,7 +75,7 @@ public class MyClassFunc {
 
 				}
 
-				if (min != 0) {
+				if (min > 0) {
 					if (min <= 999) {
 						if (max <= 999) {
 							if (max >= min) {
