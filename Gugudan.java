@@ -13,7 +13,7 @@ class Calculator { // 구구단 기능 메인에서 분리
 
 public class Gugudan {
 
-	public static boolean MyException(int dan) {
+	public static boolean MyException(int dan) {// 기존 코드에서 예외조건 메인에서 분
 		if (dan <= 0 || dan > 999) {
 			return false;
 		} else
