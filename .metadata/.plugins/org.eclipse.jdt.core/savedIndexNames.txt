@@ -1,0 +1,20 @@
+INDEX VERSION 1.131+C:\practice-java\campus-java-gugudan\.metadata\.plugins\org.eclipse.jdt.core
+1069719889.index
+2922093605.index
+2808236482.index
+1401107734.index
+476755445.index
+2598152.index
+2158471175.index
+1002677649.index
+1726068343.index
+1599200894.index
+859397209.index
+1464182320.index
+3962426996.index
+158551806.index
+3184491376.index
+3624875219.index
+1325091951.index
+2381076460.index
+1352520941.index
