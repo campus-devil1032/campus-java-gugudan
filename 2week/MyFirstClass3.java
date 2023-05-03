@@ -1,5 +1,6 @@
 package homework;
 
+import java.awt.print.Printable;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,15 +12,16 @@ public class MyFirstClass3 {
 		//optional1 : 유저에게 단수를 입력받는다. 1~999까지의 입력만 유효하게 예외처리
 		//TODO : Scanner -> BufferedReader 로 변경하기
 		//TODO : Exception 범위 제한하기
-		boolean quit=true;
-		while(quit) {
+		//TODO : view를 빼기
+		boolean isContinue=true;
+		while(isContinue) {
 //			Scanner sc = new Scanner(System.in);
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			System.out.print("구구단을 출력합니다. 원하는 단수를 입력해주세요 (종료는 q): ");
 //			int number = sc.nextInt();
 			String input = br.readLine();
 			if(input.equals("q")) {	// String은 equal로 값을 비교
-				quit = false;
+				isContinue = false;
 				break;
 			}
 			else if(isInteger(input)) {
@@ -47,12 +49,11 @@ public class MyFirstClass3 {
 		try {
 			int num = Integer.parseInt(number);
 			if(num>999 || num<1) 
-					throw new IOException();
+					throw new DanValueOverflowException();
 		}catch(NumberFormatException e){
 			System.out.println("숫자를 입력해주세요.");
 			return false;
-		}catch(IOException e) {
-			System.out.println("1~999까지만 입력해주세요.");
+		}catch(DanValueOverflowException e) {
 			return false;
 		}
 		
