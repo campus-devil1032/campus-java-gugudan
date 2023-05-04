@@ -1,8 +1,6 @@
 package homework;
 
 public class GugudanView { // view
-	int[] result;
-	String[] viewResult;
 	GugudanModel model;
 
 	public GugudanView(GugudanModel model) {
