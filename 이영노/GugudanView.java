@@ -1,13 +1,13 @@
 
 public class GugudanView {
 
-	public void printGugudan(int gugudanNum) {
+	public void updateView(int GugudanAnswer) {
 		try {
-		for (int i = gugudanNum; i <= gugudanNum; i++) {
+			System.out.printf("%d단\n", GugudanAnswer); // 몇 단인지는 한번만 출력
 			for (int j = 1; j < 10; j++) {
-				System.out.printf("%d단 %d * %d = %d%n", i, i, j, i * j);
+				System.out.printf("%d단 %d * %d = %d%n", GugudanAnswer, GugudanAnswer, j, GugudanAnswer * j);
 			}
-		}
+		
 		}
 		catch (NullPointerException e) {
 			// 이 예외는 null 개체의 멤버를 참조할 때 발생합니다. Null은 아무것도 나타내지 않습니다
@@ -19,7 +19,11 @@ public class GugudanView {
 			// 이것은 런타임 중에 발생하는 예외를 나타냅니다
 			System.out.println(e.getMessage());
 		}
+	
+		
 		
 	}
+	
+
 	
 }
