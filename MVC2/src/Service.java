@@ -9,16 +9,7 @@ public class Service {
 	private int num;
 
 	public Service(String name, int num) {
-		this.setName(name);
 		this.setNum(num);
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public int getNum() {
@@ -29,7 +20,4 @@ public class Service {
 		this.num = num;
 	}
 
-	public String toString() {
-		return "[환영합니다! " + name + "원하시는 서비스를 선택해주세요.]";
-	}
 }

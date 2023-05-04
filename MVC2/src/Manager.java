@@ -14,7 +14,7 @@ public class Manager {
 				System.out.println("구구단 단수를 입력해주세요 : ");
 				dan = sc.nextInt();
 				if (dan >= 1 && dan <= 999) {
-					for (int i = 1; i < 10; i++) {
+					for (int i = 1; i <= 9; i++) {
 						System.out.println(dan + "X" + i + "=" + dan * i);
 					}
 					break;
@@ -22,7 +22,6 @@ public class Manager {
 					System.out.println("입력오류!");
 				}
 			} catch (Exception e) {
-				sc = new Scanner(System.in);
 				System.out.println("1~999 범위의 정수를 입력해주세요.");
 
 			}
