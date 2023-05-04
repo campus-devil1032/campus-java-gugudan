@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class GugudanController {
 
@@ -14,6 +15,7 @@ public class GugudanController {
 	}
 	
 	public void setAnswer(int answer) {
+		
 		model.setAnswer(answer);
 	}
 	
@@ -21,6 +23,8 @@ public class GugudanController {
 	public void updateView() {
 		view.updateView(model.getAnswer());
 	}
+	
+	
 	
 	
 }
