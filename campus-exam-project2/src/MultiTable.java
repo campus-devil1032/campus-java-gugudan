@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MultiTable {
-	public int store = 0;
+	private int store = 0;
 
 	public MultiTable() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
