@@ -1,4 +1,4 @@
-class Re {// 재실행 확인 여부
+class Re {																	// 재실행 확인 여부
 	private String text;
 
 	public Re(String text) {
@@ -6,9 +6,9 @@ class Re {// 재실행 확인 여부
 	}
 
 	public void retry() {
-		if (text.equals("n")) {
+		if (text.equals("n")) {												// 입력받은 문자가 n일시
 			System.out.println("프로그램 종료");
-			System.exit(0);// 프로그램 종료
+			System.exit(0);													// 프로그램 종료
 		}
 	}
 }
