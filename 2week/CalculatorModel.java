@@ -1,10 +1,10 @@
 package homework;
 
 public class CalculatorModel {
-	int a;
-	int b;
-	int result;
-	String operator;
+	int a;				// 첫번째 값
+	int b;				// 두번째 값
+	int result;		// 결과 값
+	String operator;	// 연산자 
 	public CalculatorModel(String input) {	
 		String[] number = input.split(" ");
 		a = Integer.parseInt(number[0]);	//메인에 에러를 떠넘겨나서 별도로 정의할 필요 없음
