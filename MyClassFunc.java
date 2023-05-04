@@ -7,10 +7,12 @@ public class MyClassFunc {
 		Scanner sc = new Scanner(System.in);
 		int max = 0;
 		int min = 0;
-		int modType;
+		int modType = 0;
 		Controller c = new Controller();
 		Model m = new Model();
 		View v = new View();
+
+		// 모드 선택부입니다.
 		modType = c.selectMod(sc);
 
 		if (modType == 1) {
@@ -24,6 +26,7 @@ public class MyClassFunc {
 
 		if (modType == 2) {
 			System.out.println("계산기구현중입니다.");
+			m.calc(sc);
 		}
 
 	}
@@ -56,10 +59,16 @@ public class MyClassFunc {
 	public static class Model {
 		private int max;
 		private int min;
-		private double x;
-		private double y;
+		private double Num[]= {0,0,0,0,0,0,0,0,0,0};// 계산할 숫자들의 저장배열
+		private int countNum = 0;// 계산할 숫자들의 수
+		private char Sign[]= {' ',' ',' ',' ',' ',' ',' ',' ',' ',' '};// 계산할 기호들의 저장배열
+		private int countSign = 0;// 계산할 기호들의 수
 		private String scc;
-
+		private int scclength;// 입력받은식의 전체길이(숫자처리용 for문에 사용)
+		private char calcChar[]; // 입력받은식을 글자단위로 분할하여 저장할 배열
+		private String str = ""; // 숫자로 변환하기전 문자의 임시저장소
+		private double result = 0.;// 결과값의 배열 로 변경했다가 터져서 일단 배열없이하겠습니다.
+		private int resultCount = 0;// 계산결과의 총갯수입니다.
 		private String scannumber;
 		Scanner sc;
 
@@ -115,31 +124,155 @@ public class MyClassFunc {
 			return this.max;
 		}
 
-		public double calcSum(double x, double y) {
-			return x + y;
-		}
-
-		public double calcMinus(double x, double y) {
-			return x - y;
-		}
-
-		public double calcMultiply(double x, double y) {
-			return x * y;
-		}
-
-		public double calcDivide(double x, double y) {
-			return x / y;
-		}
-
-		public double calcModulo(double x, double y) {
-			return x % y;
-		}
-		//계산기구현부
+		// 계산기구현부
 		public double calc(Scanner sc) {
-			scc=sc.next();
-			
-			return 0.;
-			
+
+			System.out.println("계산식을 입력해주세요. 예)1+2= / 3*5=");
+			scc = sc.next();
+			scclength = scc.length();
+			calcChar = scc.toCharArray();
+			for (int i = 0; scclength > i; i++) {
+				if (calcChar[i] == '+') {
+					if (isDouble(str)) {
+						Num[countNum] = Double.parseDouble(str);
+						countNum += 1;
+						Sign[countSign] = '+';
+						countSign += 1;
+						str = "";
+					} else {
+						System.out.println("올바르지않은 계산식입니다.");
+						countNum = 0;
+						countSign = 0;
+						result = 0;
+						str = "";
+						break;
+					}
+
+				} else if (calcChar[i] == '-') {
+					if (isDouble(str)) {
+						Num[countNum] = Double.parseDouble(str);
+						countNum += 1;
+						Sign[countSign] = '-';
+						countSign += 1;
+
+						str = "";
+					} else {
+						System.out.println("올바르지않은 계산식입니다.");
+						countNum = 0;
+						countSign = 0;
+						result = 0;
+						str = "";
+						break;
+					}
+
+				} else if (calcChar[i] == 'X') {
+					if (isDouble(str)) {
+						Num[countNum] = Double.parseDouble(str);
+						countNum += 1;
+						Sign[countSign] = '*';
+						countSign += 1;
+
+						str = "";
+					} else {
+						System.out.println("올바르지않은 계산식입니다.");
+						countNum = 0;
+						countSign = 0;
+						result = 0;
+						str = "";
+						break;
+					}
+
+				} else if (calcChar[i] == '/') {
+					if (isDouble(str)) {
+						Num[countNum] = Double.parseDouble(str);
+						countNum += 1;
+						Sign[countSign] = '/';
+						countSign += 1;
+
+						str = "";
+					} else {
+						System.out.println("올바르지않은 계산식입니다.");
+						countNum = 0;
+						countSign = 0;
+						result = 0;
+						str = "";
+						break;
+					}
+
+				} else if (calcChar[i] == '*') {
+					if (isDouble(str)) {
+						Num[countNum] = Double.parseDouble(str);
+						countNum += 1;
+						Sign[countSign] = '*';
+						countSign += 1;
+						str = "";
+					} else {
+						System.out.println("올바르지않은 계산식입니다.");
+						countNum = 0;
+						countSign = 0;
+						result = 0;
+						str = "";
+						break;
+					}
+
+				} else if (calcChar[i] == '%') {
+					if (isDouble(str)) {
+						Num[countNum] = Double.parseDouble(str);
+						countNum += 1;
+						Sign[countSign] = '%';
+						countSign += 1;
+
+						str = "";
+					} else {
+						System.out.println("올바르지않은 계산식입니다.");
+						countNum = 0;
+						countSign = 0;
+						result = 0;
+						str = "";
+						break;
+					}
+				} else if (calcChar[i] == '=') {
+					Num[countNum] = Double.parseDouble(str);
+					countNum += 1;
+					str = "";
+					
+					result = Num[0];
+					System.out.println(Num[0]);
+					System.out.println(Num[1]);
+					System.out.println(Num[2]);
+					for (int k = 0; countSign > k; k++) {
+						System.out.println(Sign[k]);
+					}
+					for (int j = 0; j < countSign; j++) {
+						if (Sign[j] == '+') {
+							result += Num[j + 1];
+						}
+						if (Sign[j] == '-') {
+							result -= Num[j + 1];
+						}
+						if (Sign[j] == '*') {
+							result *= Num[j + 1];
+						}
+						if (Sign[j] == 'X') {
+							result *= Num[j + 1];
+						}
+						if (Sign[j] == '/') {
+							result /= Num[j + 1];
+						}
+						if (Sign[j] == '%') {
+							result %= Num[j + 1];
+						}
+					}
+				} else {
+					str += calcChar[i];
+				}
+
+			}
+			System.out.println(str);
+			System.out.println(result);
+			resultCount += 1;
+			return result;
+
 		}
 
 	}
@@ -168,6 +301,17 @@ public class MyClassFunc {
 			Integer.parseInt(s);
 			return true;
 		} catch (NumberFormatException e) {
+			return false;
+		}
+
+	}
+
+	public static boolean isDouble(String s) {
+		try {
+			Double.parseDouble(s);
+			return true;
+		} catch (NumberFormatException e) {
+
 			return false;
 		}
 
