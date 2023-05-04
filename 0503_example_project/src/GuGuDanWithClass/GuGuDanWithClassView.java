@@ -1,17 +1,22 @@
 
 package GuGuDanWithClass;
 
-
 public class GuGuDanWithClassView {
 	public void printGuGuDan(String modelDan, String modelValue) {
-		
-		System.out.println("±¸±¸´ÜÀ» ¿ÜÀÚ, ±¸±¸´ÜÀ» ¿ÜÀÚ!");
-		System.out.println(modelDan +"´Ü");
+		// ë·°ëŠ” ì¶œë ¥ë§Œ!
+		System.out.println("êµ¬êµ¬ë‹¨ì„ ì™¸ì, êµ¬êµ¬ë‹¨ì„ ì™¸ì!");
+		System.out.println(modelDan + "ë‹¨");
 		System.out.println(modelValue);
-		
+
+	}
+
+	public void printErrorLimit() {
+			System.out.println("ì—ëŸ¬! 1~999 ì‚¬ì´ì—ì„œ ì…ë ¥í•˜ì„¸ìš”!");
+	
 	}
 	
-	public void printError() {
-		System.out.println("¿¡¶ó!");
+	public void printErrorChar() {
+			System.out.println("ì—ëŸ¬! ë¬¸ìì—´ì…ë‹ˆë‹¤!!");
 	}
 }
+

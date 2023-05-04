@@ -6,17 +6,17 @@ import java.io.InputStreamReader;
 
 public class GuGuDan_Ex2 {
 	public static void main(String[] args) throws IOException {
-		// ±¸±¸´Ü Ãâ·Â
-		// 1´Ü-9´Ü±îÁö Ãâ·Â
-		// Optional : À¯Àú¿¡°Ô ´Ü ¼ö¸¦ ÀÔ·Â ¹Ş´Â´Ù. - ÀÌ °æ¿ì 1~999±îÁöÀÇ ÀÔ·Â¸¸ À¯È¿ÇÏ°Ô ¿¹¿ÜÃ³¸®!
+		// êµ¬êµ¬ë‹¨ ì¶œë ¥
+		// 1ë‹¨-9ë‹¨ê¹Œì§€ ì¶œë ¥
+		// Optional : ìœ ì €ì—ê²Œ ë‹¨ ìˆ˜ë¥¼ ì…ë ¥ ë°›ëŠ”ë‹¤. - ì´ ê²½ìš° 1~999ê¹Œì§€ì˜ ì…ë ¥ë§Œ ìœ íš¨í•˜ê²Œ ì˜ˆì™¸ì²˜ë¦¬!
 
-		System.out.println("±¸±¸´ÜÀ» ¿ÜÀÚ, ±¸±¸´ÜÀ» ¿ÜÀÚ! ¸î ´Ü?");
-		System.out.println("q¸¦ ÀÔ·ÂÇÏ½Ã¸é Á¾·áµË´Ï´Ù.");
+		System.out.println("êµ¬êµ¬ë‹¨ì„ ì™¸ì, êµ¬êµ¬ë‹¨ì„ ì™¸ì! ëª‡ ë‹¨?");
+		System.out.println("që¥¼ ì…ë ¥í•˜ì‹œë©´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = br.readLine();
 		if (isInteger(input)) {
-			System.out.println("±¸±¸´ÜÀ» ¿ÜÀÚ, ±¸±¸´ÜÀ» ¿ÜÀÚ! ¸î ´Ü?");
-			System.out.println("q¸¦ ÀÔ·ÂÇÏ½Ã¸é Á¾·áµË´Ï´Ù.");
+			System.out.println("êµ¬êµ¬ë‹¨ì„ ì™¸ì, êµ¬êµ¬ë‹¨ì„ ì™¸ì! ëª‡ ë‹¨?");
+			System.out.println("që¥¼ ì…ë ¥í•˜ì‹œë©´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 			int i = Integer.parseInt(input);
 			if (i < 1000 && 0 < i) {
 				int j = 0;
@@ -25,11 +25,11 @@ public class GuGuDan_Ex2 {
 					System.out.println(i + "*" + j + "=" + i * j);
 
 					if (j == 9) {
-						System.out.println("±¸±¸´Ü Àç¹Õ´Ù!");
+						System.out.println("êµ¬êµ¬ë‹¨ ì¬ë°Œë‹¤!");
 					}
 				}
 			} else {
-				System.out.println("1~999ÀÇ ¹üÀ§¿¡¼­¸¸ ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("1~999ì˜ ë²”ìœ„ì—ì„œë§Œ ì…ë ¥í•˜ì„¸ìš”");
 				return;
 			}
 		}
@@ -40,7 +40,7 @@ public class GuGuDan_Ex2 {
 			Integer.parseInt(s);
 			return true;
 		} catch (NumberFormatException e) {
-			System.out.println("ÀÔ·ÂÇÑ °ªÀº ¹®ÀÚ¿­ÀÔ´Ï´Ù");
+			System.out.println("ì…ë ¥í•œ ê°’ì€ ë¬¸ìì—´ì…ë‹ˆë‹¤");
 			return false;
 		}
 

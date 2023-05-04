@@ -5,18 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
- * (1) Integer.parseInt ÇÔ¼ö¸¦ µÎ ¹ø È£ÃâÇÏ°í ÀÖÀ½
- * (2) ÀÌ°É ¿Ö ¿©±â¼­?
- * (3) ÀÇµµÇÏÁö ¾ÊÀº ¿¡·¯µµ °°ÀÌ Ã³¸®µÊ
- * (4) ÇÔ¼ö ¸¸µç ÀÇµµ°¡?
+ * (1) Integer.parseInt í•¨ìˆ˜ë¥¼ ë‘ ë²ˆ í˜¸ì¶œí•˜ê³  ìˆìŒ
+ * (2) ì´ê±¸ ì™œ ì—¬ê¸°ì„œ?
+ * (3) ì˜ë„í•˜ì§€ ì•Šì€ ì—ëŸ¬ë„ ê°™ì´ ì²˜ë¦¬ë¨
+ * (4) í•¨ìˆ˜ ë§Œë“  ì˜ë„ê°€?
  */
 public class GuGuDan_Ex {
 	public static void main(String[] args) throws IOException {
-		// ±¸±¸´Ü Ãâ·Â
-		// 1´Ü-9´Ü±îÁö Ãâ·Â
-		// Optional : À¯Àú¿¡°Ô ´Ü ¼ö¸¦ ÀÔ·Â ¹Ş´Â´Ù. - ÀÌ °æ¿ì 1~999±îÁöÀÇ ÀÔ·Â¸¸ À¯È¿ÇÏ°Ô ¿¹¿ÜÃ³¸®!
-		System.out.println("±¸±¸´ÜÀ» ¿ÜÀÚ, ±¸±¸´ÜÀ» ¿ÜÀÚ! ¸î ´Ü?");
-		System.out.println("q¸¦ ÀÔ·ÂÇÏ½Ã¸é Á¾·áµË´Ï´Ù.");
+		// êµ¬êµ¬ë‹¨ ì¶œë ¥
+		// 1ë‹¨-9ë‹¨ê¹Œì§€ ì¶œë ¥
+		// Optional : ìœ ì €ì—ê²Œ ë‹¨ ìˆ˜ë¥¼ ì…ë ¥ ë°›ëŠ”ë‹¤. - ì´ ê²½ìš° 1~999ê¹Œì§€ì˜ ì…ë ¥ë§Œ ìœ íš¨í•˜ê²Œ ì˜ˆì™¸ì²˜ë¦¬!
+		System.out.println("êµ¬êµ¬ë‹¨ì„ ì™¸ì, êµ¬êµ¬ë‹¨ì„ ì™¸ì! ëª‡ ë‹¨?");
+		System.out.println("që¥¼ ì…ë ¥í•˜ì‹œë©´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = br.readLine();
 		int change = Integer.parseInt(input);
@@ -26,15 +26,15 @@ public class GuGuDan_Ex {
 				i++;
 				System.out.println(change + "*" + i + "=" + change * i);
 			}
-			System.out.println("±¸±¸´Ü Àç¹Õ´Ù!");
+			System.out.println("êµ¬êµ¬ë‹¨ ì¬ë°Œë‹¤!");
 			return;
 
 		} else if (change <= 0 || 1000 <= change) {
-			System.out.println("1~999ÀÇ ¹üÀ§¿¡¼­¸¸ ÀÔ·ÂÇÏ¼¼¿ä");
+			System.out.println("1~999ì˜ ë²”ìœ„ì—ì„œë§Œ ì…ë ¥í•˜ì„¸ìš”");
 			return;
 			
 		} else {
-			System.out.println("ÀÔ·ÂÇÑ °ªÀº ¹®ÀÚ¿­ÀÔ´Ï´Ù");
+			System.out.println("ì…ë ¥í•œ ê°’ì€ ë¬¸ìì—´ì…ë‹ˆë‹¤");
 			return;
 		}
 	}

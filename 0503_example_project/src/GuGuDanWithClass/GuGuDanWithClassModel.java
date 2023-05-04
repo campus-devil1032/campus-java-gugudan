@@ -2,6 +2,7 @@
 package GuGuDanWithClass;
 
 public class GuGuDanWithClassModel {
+	// 모델에서는 받은 데이터 및 계산을 진행
 	private String dan;
 	private String value;
 
@@ -25,17 +26,23 @@ public class GuGuDanWithClassModel {
 		this.value = value;
 	}
 
-	private boolean isError;
+	private boolean isErrorLimit;
 
-	public void setError() {
-		this.isError = true;
+	public void setErrorLimit() {
+		this.isErrorLimit = true;
 	}
 
-	public void resetError() {
-		this.isError = false;
+	public boolean isErrorLimit() {
+		return this.isErrorLimit;
+	}
+	
+	private boolean isErrorChar;
+
+	public void setErrorChar() {
+		this.isErrorChar = true;
 	}
 
-	public boolean isError() {
-		return this.isError;
+	public boolean isErrorChar() {
+		return this.isErrorChar;
 	}
 }

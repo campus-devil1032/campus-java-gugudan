@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 public class GuGuDanWithClassApp {
 	public static void main(String[] args) throws IOException {
 
-		System.out.println("±¸±¸´ÜÀ» ¿ÜÀÚ, ±¸±¸´ÜÀ» ¿ÜÀÚ! ¸î ´Ü?");
+		System.out.println("êµ¬êµ¬ë‹¨ì„ ì™¸ì, êµ¬êµ¬ë‹¨ì„ ì™¸ì! ëª‡ ë‹¨?");
 		
 		GuGuDanWithClassModel model = new GuGuDanWithClassModel();
 		GuGuDanWithClassView view = new GuGuDanWithClassView();

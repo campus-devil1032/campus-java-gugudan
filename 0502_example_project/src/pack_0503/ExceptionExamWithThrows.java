@@ -3,41 +3,41 @@ package pack_0503;
 public class ExceptionExamWithThrows {
 	public static void main(String[] args) {
 		try {
-			methodWithNull(); // ¿©±â¼­ ÄÚµå°¡ ÅÍÁø´Ù.
-			methodWithArrayIndexOutOfBounds(); // ÀÌ ºÎºĞÀº ½ÇÇàµÇÁö ¾Ê´Â´Ù
-			methodArithmetic(); // ÀÌ ºÎºĞÀº ½ÇÇàµÇÁö ¾Ê´Â´Ù.
+			methodWithNull(); // ì—¬ê¸°ì„œ ì½”ë“œê°€ í„°ì§„ë‹¤.
+			methodWithArrayIndexOutOfBounds(); // ì´ ë¶€ë¶„ì€ ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ë‹¤
+			methodArithmetic(); // ì´ ë¶€ë¶„ì€ ì‹¤í–‰ë˜ì§€ ì•ŠëŠ”ë‹¤.
 		} catch (NullPointerException e) {
-			System.out.println("NullPointerException ¿¹¿Ü ¹ß»ı: " + e.getMessage()); // ÄÚµå°¡ ÅÍÁö°í ³­ ÈÄ Èå¸§ÀÌ ÀÌÂÊÀ¸·Î ³Ñ¾î¿Â´Ù.
+			System.out.println("NullPointerException ì˜ˆì™¸ ë°œìƒ: " + e.getMessage()); // ì½”ë“œê°€ í„°ì§€ê³  ë‚œ í›„ íë¦„ì´ ì´ìª½ìœ¼ë¡œ ë„˜ì–´ì˜¨ë‹¤.
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("ArrayIndexOutOfBoundsException ¿¹¿Ü ¹ß»ı: " + e.getMessage());
+			System.out.println("ArrayIndexOutOfBoundsException ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
 		} catch (ArithmeticException e) {
-			System.out.println("ArithmeticException ¿¹¿Ü ¹ß»ı: " + e.getMessage());
+			System.out.println("ArithmeticException ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
 		}
 
-		// ¾Õ¼­ catch ±¸¹®¿¡¼­ ¿¡·¯¸¦ Ã³¸®ÇßÀ¸¹Ç·Î Èå¸§Àº ´Ù½Ã ÀÌÂÊÀ¸·Î ³Ñ¾î¿Â´Ù.
+		// ì•ì„œ catch êµ¬ë¬¸ì—ì„œ ì—ëŸ¬ë¥¼ ì²˜ë¦¬í–ˆìœ¼ë¯€ë¡œ íë¦„ì€ ë‹¤ì‹œ ì´ìª½ìœ¼ë¡œ ë„˜ì–´ì˜¨ë‹¤.
 
 		try {
 			methodWithNull();
 		} catch (NullPointerException e) {
-			System.out.println("NullPointerException ¿¹¿Ü ¹ß»ı: " + e.getMessage());
+			System.out.println("NullPointerException ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
 		}
 
 		try {
 			methodWithArrayIndexOutOfBounds();
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("ArrayIndexOutOfBoundsException ¿¹¿Ü ¹ß»ı: " + e.getMessage());
+			System.out.println("ArrayIndexOutOfBoundsException ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
 		}
 
 		try {
 			methodArithmetic();
 		} catch (ArithmeticException e) {
-			System.out.println("ArithmeticException ¿¹¿Ü ¹ß»ı: " + e.getMessage());
+			System.out.println("ArithmeticException ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
 		}
 
 		try {
-			methodWithNull(); // ¿©±â¼­ ÄÚµå°¡ ÅÍÁö´Âµ¥ Àß¸ø µÈ Exception Catch¸¦ÇÑ´Ù¸é ÇÔ¼öÈ£ÃâÀÌ Á¾·áµÈ´Ù.
+			methodWithNull(); // ì—¬ê¸°ì„œ ì½”ë“œê°€ í„°ì§€ëŠ”ë° ì˜ëª» ëœ Exception Catchë¥¼í•œë‹¤ë©´ í•¨ìˆ˜í˜¸ì¶œì´ ì¢…ë£Œëœë‹¤.
 		} catch (ArithmeticException e) {
-			System.out.println("ArithmeticException ¿¹¿Ü ¹ß»ı: " + e.getMessage()); // ÀÌ ÄÚµå´Â Å¸Áö ¾Ê´Â´Ù.
+			System.out.println("ArithmeticException ì˜ˆì™¸ ë°œìƒ: " + e.getMessage()); // ì´ ì½”ë“œëŠ” íƒ€ì§€ ì•ŠëŠ”ë‹¤.
 		}
 
 	}

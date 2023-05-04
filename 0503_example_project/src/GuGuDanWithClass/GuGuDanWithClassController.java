@@ -22,13 +22,13 @@ public class GuGuDanWithClassController {
 	public void setDan(String dan) {
 		if (isInteger(dan)) {
 			int i = Integer.parseInt(dan);
-			if (i <= 0 || 999 < i) { // modelÀ» error·Î ¼¼ÆÃ
-				model.setError();
+			if (i <= 0 || 999 < i) { // ë²”ìœ„ ì—ëŸ¬
+				model.setErrorLimit();
 			} else {
-				model.setDan(dan); // model¿¡ ±¸±¸´Ü ¼¼ÆÃ
+				model.setDan(dan); // ì˜¬ë°”ë¥¸ ê°’
 			}
-		} else { // modelÀ» error·Î ¼¼ÆÃ
-			model.setError();
+		} else { // ë¬¸ìžì—´
+			model.setErrorChar();
 		}
 	}
 
@@ -37,18 +37,22 @@ public class GuGuDanWithClassController {
 	}
 
 	public void updateView() {
-		if (model.isError()) {
-			   // view¿¡°Ô ¿¡·¯ È­¸é ¶ç¿ì¶ó°í ÇÏ¼À
-			   view.printError();
+		if (model.isErrorLimit()==true) {
+			   // ì—ëŸ¬ ì‹œ í™”ë©´ - ë²”ìœ„ ë²—ì–´ë‚¨
+			   view.printErrorLimit();
+			   
+			} else if(model.isErrorChar()==true) {
+				   // ì—ëŸ¬ ì‹œ í™”ë©´ - ë¬¸ìžì—´
+				view.printErrorChar();}
+		
+				else {// ì •ìƒ ì¶œë ¥
+					view.printGuGuDan(model.getDan(), model.getValue());
+				}
+				
 			}
-			else {
-			   // ±âÁ¸ view Ãâ·Â ÄÚµå
-		view.printGuGuDan(model.getDan(), model.getValue());
-		}
-	}
 
 	public static boolean isInteger(String s) {
-		try {
+		try { // ì˜ˆì™¸ì²˜ë¦¬
 			Integer.parseInt(s);
 			return true;
 		} catch (NumberFormatException e) {

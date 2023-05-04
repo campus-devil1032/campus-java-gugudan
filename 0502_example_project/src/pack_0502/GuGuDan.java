@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class GuGuDan {
 	public static void main(String[] args) {
-		// ±¸±¸´Ü Ãâ·Â
-		// 1´Ü-9´Ü±îÁö Ãâ·Â
-		// Optional : À¯Àú¿¡°Ô ´Ü ¼ö¸¦ ÀÔ·Â ¹Ş´Â´Ù. - ÀÌ °æ¿ì 1~999±îÁöÀÇ ÀÔ·Â¸¸ À¯È¿ÇÏ°Ô ¿¹¿ÜÃ³¸®!
-		// Optional : ºñÁî´Ï½º ·ÎÁ÷ ºĞ¸® - View ´Ü°ú ºñÁî´Ï½º ·ÎÁ÷ Å¬·¡½º¸¦ µû·Î »ı¼ºÇØ¼­ ÄÚµå¸¦ ¸ŞÀÎ¿¡¼­ ºĞ¸®
+		// êµ¬êµ¬ë‹¨ ì¶œë ¥
+		// 1ë‹¨-9ë‹¨ê¹Œì§€ ì¶œë ¥
+		// Optional : ìœ ì €ì—ê²Œ ë‹¨ ìˆ˜ë¥¼ ì…ë ¥ ë°›ëŠ”ë‹¤. - ì´ ê²½ìš° 1~999ê¹Œì§€ì˜ ì…ë ¥ë§Œ ìœ íš¨í•˜ê²Œ ì˜ˆì™¸ì²˜ë¦¬!
+		// Optional : ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§ ë¶„ë¦¬ - View ë‹¨ê³¼ ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§ í´ë˜ìŠ¤ë¥¼ ë”°ë¡œ ìƒì„±í•´ì„œ ì½”ë“œë¥¼ ë©”ì¸ì—ì„œ ë¶„ë¦¬
 
 		while (true) {
-			System.out.println("±¸±¸´ÜÀ» ¿ÜÀÚ, ±¸±¸´ÜÀ» ¿ÜÀÚ! ¸î ´Ü?");
-			System.out.println("0À» ÀÔ·ÂÇÏ½Ã¸é Á¾·áµË´Ï´Ù.");
+			System.out.println("êµ¬êµ¬ë‹¨ì„ ì™¸ì, êµ¬êµ¬ë‹¨ì„ ì™¸ì! ëª‡ ë‹¨?");
+			System.out.println("0ì„ ì…ë ¥í•˜ì‹œë©´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 			Scanner sc = new Scanner(System.in);
 			int i = sc.nextInt();
 			if (i == 0) {
-				System.out.println("¾È³ç~");
+				System.out.println("ì•ˆë…•~");
 				break;
 			}
 			if (i < 1000 && 0 < i) {
@@ -24,11 +24,11 @@ public class GuGuDan {
 					j++;
 					System.out.println(i + "*" + j + "=" + i * j);
 					if (j == 9) {
-						System.out.println("±¸±¸´Ü Àç¹Õ´Ù!");
+						System.out.println("êµ¬êµ¬ë‹¨ ì¬ë°Œë‹¤!");
 					}
 				}
 			} else {
-				System.out.println("1~999ÀÇ ¹üÀ§¿¡¼­¸¸ ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("1~999ì˜ ë²”ìœ„ì—ì„œë§Œ ì…ë ¥í•˜ì„¸ìš”");
 			}
 		}
 	}
