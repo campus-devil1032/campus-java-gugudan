@@ -9,7 +9,7 @@ public class CalculatorController { // controller
 	public String input; // 입력값 처리
 
 	public void inputData() { // 외부에서 접근할 메서드
-		boolean isRun = true;
+		boolean isRun = true;	//while문 반복 변수, while-switch구문을 써주어 while문을 빠져나올 키워드 필요
 		while (isRun) {
 			input = null; // null값을 전역에서 사용해 while들어면 초기화
 			menuView(); // 메뉴를 띄운다
