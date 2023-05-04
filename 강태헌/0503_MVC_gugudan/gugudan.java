@@ -19,7 +19,7 @@ public class gugudan {
 	}
 
 	public void print() {
-		System.out.println("Model.");
+
 		System.out.println(dan + "단 출력.");
 		for (int i = 1; i < 10; i++) {
 			System.out.println(dan + "*" + i + "=" + dan * i);

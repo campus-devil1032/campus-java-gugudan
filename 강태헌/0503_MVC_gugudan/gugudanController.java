@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class gugudanController {
 	public void run() {
-		System.out.println("Controller.");
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("숫자를 1~999 사이 값으로 입력하세요");
 
