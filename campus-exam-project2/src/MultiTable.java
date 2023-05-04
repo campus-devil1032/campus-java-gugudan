@@ -3,27 +3,28 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MultiTable {
+	public int store = 0;
 
 	public MultiTable() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			System.out.println("1~999사이의 정수를 입력해주세요");
 			String str = br.readLine();
-			if (CheckInteger(str)) {
+			if (checkInteger(str)) {
 				int temp = Integer.parseInt(str);
-				if (temp > 0 && temp < 1000) {
+				if (temp >= 1 && temp <= 999) {
 					this.store = temp;
 					break;
-				} else
+				} else {
 					System.out.println("범위를 벗어났습니다.");
-			} else
+				}
+			} else {
 				System.out.println("정수가 아닙니다.");
-
+			}
 		}
-		br.close();
 	}
 
-	private boolean CheckInteger(String s) {
+	private boolean checkInteger(String s) {
 		try {
 			Integer.parseInt(s);
 			return true;
@@ -32,10 +33,9 @@ public class MultiTable {
 		}
 	}
 
-	public void Print() {
-		for (int i = 1; i < 10; i++)
+	public void print() {
+		for (int i = 1; i < 10; i++) {
 			System.out.printf("%d x %d = %d\n", store, i, store * i);
+		}
 	}
-
-	public int store = 0;
 }
