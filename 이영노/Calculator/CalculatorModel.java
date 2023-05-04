@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CalculatorModel {
@@ -7,7 +8,7 @@ public class CalculatorModel {
 	private String operator;
 	private double answerNumber;
 	
-	CalculatorModel() {
+	CalculatorModel() throws IOException {
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("계산할 첫번째 숫자를 입력하세요: ");
@@ -23,6 +24,7 @@ public class CalculatorModel {
 		String inputNumberTwo = scan.next();
 		double intnumberTwo = Integer.parseInt(inputNumberTwo);
 		System.out.println(intnumberTwo);
+		scan.close();
 		
 		double answer = 0;
 		switch (inputOperator) {
