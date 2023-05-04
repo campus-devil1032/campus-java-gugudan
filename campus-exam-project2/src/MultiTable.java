@@ -5,11 +5,17 @@ import java.io.InputStreamReader;
 public class MultiTable {
 	public int store = 0;
 
-	public MultiTable() throws IOException {
+	public MultiTable() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			System.out.println("1~999사이의 정수를 입력해주세요");
-			String str = br.readLine();
+			String str;
+			try {
+				str = br.readLine();
+			} catch (IOException e) {
+				str = "0";
+				System.out.println("IOException!");
+			}
 			if (checkInteger(str)) {
 				int temp = Integer.parseInt(str);
 				if (temp >= 1 && temp <= 999) {

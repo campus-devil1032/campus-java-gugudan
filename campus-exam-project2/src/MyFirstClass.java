@@ -10,26 +10,21 @@ public class MyFirstClass {
 			System.out.println("구구단 : 1 | 계산기 : 2 | 종료 : 0");
 			try {
 				cond = br.readLine();
-				if (cond.equals("1")) {
-					try {
-						MultiTable mt = new MultiTable();
-						mt.print();
-					} catch (IOException e) {
-						System.out.println("IOException!");
-					}
-				}
-				if (cond.equals("2")) {
-					try {
-						Calculator c = new Calculator();
-					} catch (IOException e) {
-						System.out.println("IOExeption!");
-					}
-				}
-				if (cond.equals("0")) {
-					return;
-				}
-			} catch (IOException e1) {
-				System.out.println("IOExeption!");
+			} catch (IOException e) {
+				cond = "-";
+				System.out.println("IOException!");
+			}
+
+			switch (cond) {
+			case "1":
+				MultiTable mt = new MultiTable();
+				mt.print();
+				break;
+			case "2":
+				Calculator c = new Calculator();
+				break;
+			case "0":
+				break;
 			}
 		}
 	}

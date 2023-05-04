@@ -6,7 +6,7 @@ public class Calculator {
 	private BufferedReader br;
 	private float a, b;
 
-	public Calculator() throws IOException {
+	public Calculator() {
 		br = new BufferedReader(new InputStreamReader(System.in));
 		a = getNum();
 		b = getNum();
@@ -14,12 +14,17 @@ public class Calculator {
 		calc();
 	}
 
-	private void calc() throws IOException {
+	private void calc() {
 		String c;
 		System.out.println("원하는 연산을 입력해주세요 [+ - * / %]");
 		while (true) {
-			c = br.readLine();
-			switch(c) { //스위치문 종료시 함수밖으로 나가기위해 return 사용
+			try {
+				c = br.readLine();
+			} catch (IOException e) {
+				c = "";
+				System.out.println("IOException!");
+			}
+			switch (c) { // 스위치문 종료시 함수밖으로 나가기위해 return 사용
 			case "+":
 				System.out.printf("%f %s %f = %f\n", a, c, b, a + b);
 				return;
@@ -40,9 +45,15 @@ public class Calculator {
 		}
 	}
 
-	private float getNum() throws IOException {
+	private float getNum() {
 		System.out.println("실수를 입력해주세요");
-		String str = br.readLine();
+		String str;
+		try {
+			str = br.readLine();
+		} catch (IOException e) {
+			str = "-";
+			System.out.println("IOException!");
+		}
 		while (true) {
 			if (checkNumber(str)) {
 				return Float.parseFloat(str);
