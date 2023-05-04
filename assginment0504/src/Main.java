@@ -35,8 +35,10 @@ public class Main {
             while(true) {
                 try {
                     controller2.run();
-                } catch(Exception e) {
-                    gugudanView.printMessage("error : " + e.getMessage());
+                } catch(InputMismatchException e) {
+                    gugudanView.printMessage("InputMismatchException, " + e.getMessage());
+                } catch (IllegalArgumentException e){
+                    gugudanView.printMessage("IllegalArgumentException, " + e.getMessage());
                 }
             }
 
