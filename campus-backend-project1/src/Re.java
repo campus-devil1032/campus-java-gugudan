@@ -1,7 +1,7 @@
 class Re {// 재실행 확인 여부
 	private String text;
 
-	Re(String text) {
+	public Re(String text) {
 		this.text = text;
 	}
 
