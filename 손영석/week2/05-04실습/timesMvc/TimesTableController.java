@@ -12,6 +12,7 @@ public class TimesTableController {
 		System.out.println("1 : 구구단");
 		System.out.println("2 : 계산기");
 		System.out.println("0 : 종료");
+		System.out.println("----------");
 	}
 
 	// 메뉴 선택

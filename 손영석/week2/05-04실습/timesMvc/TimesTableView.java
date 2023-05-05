@@ -11,11 +11,18 @@ public class TimesTableView {
 		while (true) {
 			try {
 				// 숫자 입력받기
-				System.out.println("숫자를 입력하세요(1~999)");
+				System.out.println("<1~999 사이의 정수를 입력하세요>");
+				System.out.println("(0 입력시 종료)");
 				int num = controller.getNum();
 
 				// 구구단 계산하기
-				model.multiplication(num);
+
+				if (num == 0) { // 0 입력 시 종료
+					System.out.println("프로그램을 종료합니다.");
+					break;
+				} else {
+					model.multiplication(num);
+				}
 
 			} catch (InputMismatchException e) { // 자료형 불일치 시
 				System.err.println("잘못된 입력입니다. 프로그램을 종료합니다.");
@@ -28,13 +35,13 @@ public class TimesTableView {
 	public static void calc() {
 		while (true) {
 			try {
-				System.out.println("첫 번째 숫자를 입력하세요.");
+				System.out.println("<첫 번째 숫자를 입력하세요>");
 				double num1 = controller.getDoubleNum();
 
-				System.out.println("연산자를 입력하세요(+, -, *, /, %)");
+				System.out.println("<연산자를 입력하세요(+, -, *, /, %)>");
 				String operator = controller.getOperator();
 
-				System.out.println("두 번째 숫자를 입력하세요.");
+				System.out.println("<두 번째 숫자를 입력하세요>");
 				double num2 = controller.getDoubleNum();
 
 				// 입력값 계산하기
@@ -77,6 +84,5 @@ public class TimesTableView {
 			System.err.println("잘못된 입력입니다. 프로그램을 종료합니다.");
 			return;
 		}
-
 	}
 }

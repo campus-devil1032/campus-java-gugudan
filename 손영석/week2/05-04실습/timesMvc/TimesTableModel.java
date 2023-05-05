@@ -6,16 +6,18 @@ public class TimesTableModel {
 	public void multiplication(int num) {
 
 		if (num < 1 || num > 999) { // 입력범위제한
-			System.err.println("1에서 999 사이의 정수만 입력하세요.");
+			System.err.println("1에서 999 사이의 정수가 아닙니다.");
 			return;
+
+		} else {
+			System.out.println(num + "단을 출력합니다.");
+			System.out.println("====================");
+
+			for (int i = 1; i < 10; i++) { // 계산 후 출력
+				System.out.println(num + " x " + i + " = " + (num * i));
+			}
+			System.out.println("====================");
 		}
-
-		System.out.println(num + "단을 출력합니다.");
-
-		for (int i = 1; i < 10; i++) { // 계산
-			System.out.println(num + " x " + i + " = " + (num * i));
-		}
-
 	}
 
 	// 계산기
@@ -33,12 +35,14 @@ public class TimesTableModel {
 			result = num1 / num2;
 		} else if (operator.equals("%") && num1 != 0 && num2 != 0) { // 나머지 구하기
 			result = num1 % num2;
-		} else { // 입력이 잘못된 경우
-			System.err.println("잘못된 입력입니다.");
+		} else { // 연산자 입력이 잘못된 경우
+			System.err.println("연산자가 잘못되었습니다. 다시 입력하세요.");
 			return;
 		}
 		// 결과값 출력
+		System.out.println("====================");
 		System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
+		System.out.println("====================");
 	}
 
 }
