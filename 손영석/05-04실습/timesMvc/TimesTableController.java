@@ -22,25 +22,11 @@ public class TimesTableController {
 		return select;
 	}
 
-	// int값 받아오기
-	public int getNum() {
-		int num = sc.nextInt();
+	// 입력값 받아오기
+	public String getInput() {
+		String input = sc.next();
 		sc.nextLine();
-		return num;
-	}
-
-	// double값 받아오기
-	public double getDoubleNum() {
-		double num = sc.nextDouble();
-		sc.nextLine();
-		return num;
-	}
-
-	// 연산자 받아오기
-	public String getOperator() {
-		String operator = sc.next();
-		sc.nextLine();
-		return operator;
+		return input;
 	}
 
 }
