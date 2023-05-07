@@ -15,13 +15,6 @@ public class TimesTableController {
 		System.out.println("----------");
 	}
 
-	// 메뉴 선택
-	public int getSelect() {
-		int select = sc.nextInt();
-		sc.nextLine();
-		return select;
-	}
-
 	// 입력값 받아오기
 	public String getInput() {
 		String input = sc.next();
