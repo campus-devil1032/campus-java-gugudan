@@ -2,12 +2,12 @@ package timesMvc;
 
 import java.util.Scanner;
 
-public class TimesTableController {
+class TimesTableController {
 
 	Scanner sc = new Scanner(System.in);
 
 	// 메뉴 표시
-	public void showMenu() {
+	void showMenu() {
 		System.out.println("<실행할 작업>");
 		System.out.println("1 : 구구단");
 		System.out.println("2 : 계산기");
@@ -16,7 +16,7 @@ public class TimesTableController {
 	}
 
 	// 입력값 받아오기
-	public String getInput() {
+	String getInput() {
 		String input = sc.next();
 		sc.nextLine();
 		return input;

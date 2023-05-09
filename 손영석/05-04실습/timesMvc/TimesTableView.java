@@ -5,7 +5,7 @@ public class TimesTableView {
 	static TimesTableModel model = new TimesTableModel();
 
 	// 구구단
-	public static void mul() {
+	static void mul() {
 		while (true) {
 			try {
 				// 숫자 입력받기
@@ -29,7 +29,7 @@ public class TimesTableView {
 	}
 
 	// 계산기
-	public static void calc() {
+	static void calc() {
 		while (true) {
 			try {
 				System.out.println("<첫 번째 숫자를 입력하세요>");

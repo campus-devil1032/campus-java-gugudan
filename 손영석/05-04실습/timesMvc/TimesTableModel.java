@@ -1,9 +1,9 @@
 package timesMvc;
 
-public class TimesTableModel {
+class TimesTableModel {
 
 	// 구구단
-	public void multiplication(int num) {
+	void multiplication(int num) {
 
 		if (num < 1 || num > 999) { // 입력범위제한
 			System.err.println("1에서 999 사이의 정수가 아닙니다.");
@@ -21,7 +21,7 @@ public class TimesTableModel {
 	}
 
 	// 계산기
-	public void calculate(String operator, double num1, double num2) {
+	void calculate(String operator, double num1, double num2) {
 
 		double result; // 결과값 변수
 
