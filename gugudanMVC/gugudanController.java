@@ -6,15 +6,14 @@ public class gugudanController {
 	private Scanner sc;
 	private gugudanModel model;
 	
-	public gugudanController() {
+	public gugudanController() {				//sc,모델 생성
 		sc = new Scanner(System.in);
 		model = new gugudanModel();
 	}
 	
 	public int InputUserDan() throws InvalidDanException {
-			int dan = sc.nextInt();
-			model.setDan(dan);	
-			return model.getDan();
+			model.setDan(sc.nextInt());					//사용자에게서 받은 숫자를 model의 변수로 설정
+			return model.getDan();						
 	}
 
 }
