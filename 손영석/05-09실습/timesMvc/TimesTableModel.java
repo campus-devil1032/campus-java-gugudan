@@ -3,14 +3,14 @@ package timesMvc;
 class TimesTableModel {
 
 	// 구구단 계산
-	public void runMultiplicator(int num) {
+	public void multiplicate(int num) {
 		for (int i = 1; i < 10; i++) { // 계산 후 출력
 			System.out.println(num + " x " + i + " = " + (num * i));
 		}
 	}
 
 	// 계산기
-	public void runCalculator(String operator, double num1, double num2) {
+	public void calculate(String operator, double num1, double num2) {
 
 		double result; // 결과값 변수
 

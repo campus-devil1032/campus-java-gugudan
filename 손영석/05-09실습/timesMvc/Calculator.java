@@ -42,7 +42,7 @@ public class Calculator {
 
 				// 입력값 출력
 				System.out.println("====================");
-				model.runCalculator(operator, Double.parseDouble(num1), Double.parseDouble(num2));
+				model.calculate(operator, Double.parseDouble(num1), Double.parseDouble(num2));
 				System.out.println("====================");
 
 			} catch (NumberFormatException e) { // 자료형 불일치 시

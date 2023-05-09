@@ -31,7 +31,7 @@ public class Multiplicator {
 					} else {
 						System.out.println(num + "단을 출력합니다.");
 						System.out.println("====================");
-						model.runMultiplicator(iNum);
+						model.multiplicate(iNum);
 						System.out.println("====================");
 					}
 				}
