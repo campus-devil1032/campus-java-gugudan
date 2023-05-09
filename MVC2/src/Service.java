@@ -5,11 +5,20 @@
  *
  */
 public class Service {
-	private int num;
+	private int choice;
 	private int dan;
+	private int num;
 
-	public Service(int num) {
-		this.setNum(num);
+	public Service(int choice) {
+		this.setChoice(choice);
+	}
+
+	public int getChoice() {
+		return choice;
+	}
+
+	public void setChoice(int choice) {
+		this.choice = choice;
 	}
 
 	public int getNum() {
