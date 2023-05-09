@@ -8,7 +8,7 @@ public class Calcultor {
 		return number1;
 	}
 
-	public void setNumber1(String number) {
+	public void setNumber1(String number1) {
 		this.number1 = number1;
 	}
 
@@ -21,14 +21,14 @@ public class Calcultor {
 	}
 
 	public String getNumber2() {
-		return nuber2;
+		return number2;
 	}
 
 	public void setNumer2(String number2) {
 		this.number2 = number2;
 	}
 
-	public void calculate() {
+	public void calculate(String number1, String sign,String number2) {
 		int i = Integer.parseInt(number1); // 입력한 String을 int로 변환
 		int j = Integer.parseInt(number2);
 		if (sign.equals("+")) {

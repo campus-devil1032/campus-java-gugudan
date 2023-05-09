@@ -33,8 +33,8 @@ public class View {
 			}
 			System.out.println("다시 시작하시겠습까? (종료를 원할시 n을 입력하십시오)");
 			String check = scan.next();
-			Re Re = new Re(check);
-			Re.retry();
+			Re Re = new Re();
+			Re.retry(check);
 		}
 	}
 
