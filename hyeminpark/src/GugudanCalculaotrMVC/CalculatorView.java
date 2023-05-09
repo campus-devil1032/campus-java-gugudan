@@ -16,19 +16,13 @@ public class CalculatorView {
 	
 	public String getInputOperator() {
 		System.out.println("연산자를 입력하세요: ");
-		String operator = scanner.nextLine();
-		//boolean test = isValidOperator(operator);
-			
-		while (true) {
-			boolean test = isValidOperator(operator);
-			if (test == true) {
-				return operator;
-			} else {
-				operator = scanner.nextLine();
+		String operator = scanner.next();
+
+		while (!isValidOperator(operator)) {
 				System.out.println("잘못 입력했습니다. 연산자를 [+, -, *, /] 중에서 다시 입력하세요: ");
-				test = isValidOperator(operator);
+				operator = scanner.next();
 			}
-		}
+		return operator;
 	}
 	
 	public double getInputNum2() {
