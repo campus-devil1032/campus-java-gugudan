@@ -1,12 +1,17 @@
 
-public class GuGuDan  { 												// 구구단 계산
-	private String number;												
+public class GuGuDan { // 구구단 계산
+	private String number;
 
-	 public GuGuDan(String number) {
-		this.number = number;
+	public String getNumber() {
+		return number;
 	}
 
-	public void test() {
+	public void setNumber(String number) {
+		this.number = number;
+		
+	 }
+
+	public void test(String number) {
 		int i = Integer.parseInt(number);								//입력한  String을 int로 변환
 		if (0 < i && i <= 999)											// 0부터 999안의 숫자만 입력
 		{
