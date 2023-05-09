@@ -10,7 +10,11 @@ public class GugudanView {
 		System.out.print("구구단 프로그램을 종료합니다.");
 	}
 	
-	public void errorMassage(String errorMassage) {
-		System.out.println(errorMassage);
+	public void errorMassageInputMismatchException() {
+		System.out.println("Error : InputMismatchException");
+	}
+	
+	public void errorMassageIllegalArgumenException() {
+		System.out.println("Error : IllegalArgumenException");
 	}
 }
