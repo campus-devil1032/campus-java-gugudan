@@ -71,6 +71,7 @@ public class UserInputModel {
 	public int getMax() {
 		return this.max;
 	}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////                                                                                ////////////
 /////////                                                                                ////////////
@@ -78,7 +79,7 @@ public class UserInputModel {
 /////////                                                                                ////////////
 /////////                                                                                ////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
+	// 계산기 실행부입니다. Main함수 같은 역할입니다.
 	public double calculation(Scanner sc) {
 
 		String scc;
@@ -201,6 +202,11 @@ public class UserInputModel {
 				Num[countNum] = Double.parseDouble(str);
 				countNum += 1;
 				str = "";
+				/////////////////////////////////////////////////////////////////////
+
+				priorityPM[priorityPMCount] = countSign;// 우선수위 연산을 위해 추가한 구문입니다.
+				priorityPMCount += 1;
+				////////////////////////////////////////////////////////////////////
 				break;
 				// 곱셈 나눗셈 나머지 우선연산
 
@@ -213,37 +219,61 @@ public class UserInputModel {
 
 	// 입력받은값을 숫자,연산자로 가공후 실제 계산과정 모델입니다.
 	private double priorityCalculation() {
-		for (int j = 0; j < priorityMDMCount; j++) {
-			if (Sign[priorityMDM[j]] == '*') {
-				Num[priorityMDM[j]] *= Num[priorityMDM[j] + 1];
+		// + - 연산자 순서에 따라서 for문을 돌림.
+		if (priorityPMCount != 1) {
+			for (int j = 0; j < priorityPMCount; j++) {
+				for (int k = priorityPM[j]; k < priorityPM[j + 1]; k++) {
+					if (Sign[priorityMDM[k]] == '*') {
+						Num[priorityPM[j] + 1] *= Num[priorityMDM[k] + 1];
+					}
+					if (Sign[priorityMDM[k]] == 'X') {
+						Num[priorityPM[j] + 1] *= Num[priorityMDM[k] + 1];
+					}
+					if (Sign[priorityMDM[k]] == '/') {
+						Num[priorityPM[j] + 1] /= Num[priorityMDM[k] + 1];
+					}
+					if (Sign[priorityMDM[k]] == '%') {
+						Num[priorityPM[j] + 1] %= Num[priorityMDM[k] + 1];
+					}
+				}
 			}
-			if (Sign[priorityMDM[j]] == 'X') {
-				Num[priorityMDM[j]] *= Num[priorityMDM[j] + 1];
-			}
-			if (Sign[priorityMDM[j]] == '/') {
-				Num[priorityMDM[j]] /= Num[priorityMDM[j] + 1];
-			}
-			if (Sign[priorityMDM[j]] == '%') {
-				Num[priorityMDM[j]] %= Num[priorityMDM[j] + 1];
-			}
-		}
-		result = Num[0];
-		for (int j = 0; j < priorityPMCount; j++) {
+			/*
+			 * for (int j = 0; j < priorityMDMCount; j++) { if (Sign[priorityMDM[j]] == '*')
+			 * { Num[priorityMDM[j]] *= Num[priorityMDM[j] + 1]; } if (Sign[priorityMDM[j]]
+			 * == 'X') { Num[priorityMDM[j]] *= Num[priorityMDM[j] + 1]; } if
+			 * (Sign[priorityMDM[j]] == '/') { Num[priorityMDM[j]] /= Num[priorityMDM[j] +
+			 * 1]; } if (Sign[priorityMDM[j]] == '%') { Num[priorityMDM[j]] %=
+			 * Num[priorityMDM[j] + 1]; } }
+			 */
+			result = Num[0];
+			for (int j = 0; j < priorityPMCount - 1; j++) {
 
-			if (Sign[priorityPM[j]] == '+') {
-				result += Num[priorityPM[j] + 1];
+				if (Sign[priorityPM[j]] == '+') {
+					result += Num[priorityPM[j] + 1];
+				}
+				if (Sign[priorityPM[j]] == '-') {
+					result -= Num[priorityPM[j] + 1];
+				}
 			}
-			if (Sign[priorityPM[j]] == '-') {
-				result -= Num[priorityPM[j] + 1];
+		} else {
+			result = Num[0];
+			for (int j = 0; j < priorityMDMCount; j++) {
+				if (Sign[priorityMDM[j]] == '*') {
+					result *= Num[priorityMDM[j] + 1];
+				}
+				if (Sign[priorityMDM[j]] == 'X') {
+					result *= Num[priorityMDM[j] + 1];
+				}
+				if (Sign[priorityMDM[j]] == '/') {
+					result /= Num[priorityMDM[j] + 1];
+				}
+				if (Sign[priorityMDM[j]] == '%') {
+					result %= Num[priorityMDM[j] + 1];
+				}
 			}
 		}
-		/*
-		 * 우선순위없는 순차 계란로직 for (int j = 0; j < countSign; j++) { if (Sign[j] == '+') {
-		 * result += Num[j + 1]; } if (Sign[j] == '-') { result -= Num[j + 1]; } if
-		 * (Sign[j] == '*') { result *= Num[j + 1]; } if (Sign[j] == 'X') { result *=
-		 * Num[j + 1]; } if (Sign[j] == '/') { result /= Num[j + 1]; } if (Sign[j] ==
-		 * '%') { result %= Num[j + 1]; } }
-		 */
+		
+
 		return result;
 	}
 
