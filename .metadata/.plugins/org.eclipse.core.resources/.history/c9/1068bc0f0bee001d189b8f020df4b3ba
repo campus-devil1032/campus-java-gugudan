@@ -1,0 +1,49 @@
+package NewCalculator;
+
+import java.util.Scanner;
+
+public class NewCalculatorController {
+    private NewCalculatorModel model;
+    private NewCalculatorView view;
+
+    public NewCalculatorController(NewCalculatorModel model, NewCalculatorView view) {
+        this.model = model;
+        this.view = view;
+    }
+
+    public void run() {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            try {
+                view.inputFisrtNum(1);
+                int firstNum = scanner.nextInt();
+                model.setFirstNum(firstNum);
+
+                view.inputOperator();
+                String operator = scanner.next();
+                model.setOperator(operator);
+
+                view.inputSecondNum(2);
+               int secondNum = scanner.nextInt();
+                model.setSecondNum(secondNum);
+
+                int result = model.calculate(); 
+                view.printCalculationResult(result);
+
+                view.printContinueOrExitMessage();
+                if (scanner.sc.equals("종료")) {
+                    scanner.close();
+                    System.exit(0);
+                }
+
+            } catch (IllegalArgumentException e) {
+
+                view.printErrorMessage("올바른 연산자를 입력해주세요 : IllegalArgumentException");
+                scanner.nextLine();
+            } 
+        }
+
+
+    }
+}

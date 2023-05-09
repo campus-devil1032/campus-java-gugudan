@@ -1,0 +1,36 @@
+package Caclulator;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import GuGuDanWithClass.GuGuDanWithClassController;
+import GuGuDanWithClass.GuGuDanWithClassModel;
+import GuGuDanWithClass.GuGuDanWithClassView;
+
+public class CaclulatorApp {
+	public static void main(String arg[]) throws IOException {
+
+		System.out.println("어떤 기능을 사용하실 건가요?");
+		System.out.println("1. 구구단");
+		System.out.println("2. 계산기");
+		
+		CalculatorDefaultModel model = new CalculatorDefaultModel (); 
+		CalculatorView view = new CalculatorView  ();
+		CalculatorDefaultController controller = new CalculatorDefaultController ();
+		
+		
+		
+		GuGuDanWithClassModel model = new GuGuDanWithClassModel();
+		GuGuDanWithClassView view = new GuGuDanWithClassView();
+		GuGuDanWithClassController controller = new GuGuDanWithClassController(model, view);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		
+		controller.setDan(input);
+		controller.updateView(); 
+
+
+
+	}
+}

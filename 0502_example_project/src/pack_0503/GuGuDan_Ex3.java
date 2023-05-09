@@ -7,45 +7,45 @@ import java.io.InputStreamReader;
 
 public class GuGuDan_Ex3 {
 	public static void main(String[] args) throws IOException {
-		// ±¸±¸´Ü Ãâ·Â
-		// 1´Ü-9´Ü±îÁö Ãâ·Â
-		// Optional : À¯Àú¿¡°Ô ´Ü ¼ö¸¦ ÀÔ·Â ¹Ş´Â´Ù. - ÀÌ °æ¿ì 1~999±îÁöÀÇ ÀÔ·Â¸¸ À¯È¿ÇÏ°Ô ¿¹¿ÜÃ³¸®!
+		// êµ¬êµ¬ë‹¨ ì¶œë ¥
+		// 1ë‹¨-9ë‹¨ê¹Œì§€ ì¶œë ¥
+		// Optional : ìœ ì €ì—ê²Œ ë‹¨ ìˆ˜ë¥¼ ì…ë ¥ ë°›ëŠ”ë‹¤. - ì´ ê²½ìš° 1~999ê¹Œì§€ì˜ ì…ë ¥ë§Œ ìœ íš¨í•˜ê²Œ ì˜ˆì™¸ì²˜ë¦¬!
 
 		while (true) {
-			// 0. È­¸é Á¤¸®
+			// 0. í™”ë©´ ì •ë¦¬
 			for (int i = 0; i < 2; i++) {
 				System.out.println("");
 			}
 			System.out.println("========================================================");
 
-			// 1. °ÔÀÓ ½ÃÀÛ
-			System.out.println("±¸±¸´ÜÀ» ¿ÜÀÚ, ±¸±¸´ÜÀ» ¿ÜÀÚ! ¸î ´Ü?");
-			System.out.println("q¸¦ ÀÔ·ÂÇÏ½Ã¸é Á¾·áµË´Ï´Ù.");
+			// 1. ê³„ì‚° ì‹œì‘
+			System.out.println("êµ¬êµ¬ë‹¨ì„ ì™¸ì, êµ¬êµ¬ë‹¨ì„ ì™¸ì! ëª‡ ë‹¨?");
+			System.out.println("që¥¼ ì…ë ¥í•˜ì‹œë©´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String input = br.readLine();
-			// 2. Á¶°Ç Ã¼Å©
+			// 2. ì¡°ê±´ ì²´í¬
 
 			if (input.equals("q")) {
-				System.out.println("¾È³ç!");
+				System.out.println("ì•ˆë…•!");
 				break;
 			}
 
 			if (isInteger(input)) {
 				int i = Integer.parseInt(input);
 				if (i < 1000 && 0 < i) {
-					// 3. ±¸±¸´Ü Ãâ·Â
+					// 3. êµ¬êµ¬ë‹¨ ì¶œë ¥
 					int j = 0;
 					while (j < 9) {
 						j++;
 						System.out.println(i + "*" + j + "=" + i * j);
 
 						if (j == 9) {
-							System.out.println("±¸±¸´Ü Àç¹Õ´Ù!");
+							System.out.println("êµ¬êµ¬ë‹¨ ì¬ë°Œë‹¤!");
 						}
 					}
-				} else {	
+				} else {
 				}
-				System.out.println("1~999ÀÇ ¹üÀ§¿¡¼­¸¸ ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("1~999ì˜ ë²”ìœ„ì—ì„œë§Œ ì…ë ¥í•˜ì„¸ìš”");
 			}
 		}
 	}
@@ -56,7 +56,7 @@ public class GuGuDan_Ex3 {
 			return true;
 		} catch (NumberFormatException e) {
 		}
-		System.out.println("ÀÔ·ÂÇÑ °ªÀº ¹®ÀÚ¿­ÀÔ´Ï´Ù");
+		System.out.println("ì…ë ¥í•œ ê°’ì€ ë¬¸ìì—´ì…ë‹ˆë‹¤");
 		return false;
 	}
 }

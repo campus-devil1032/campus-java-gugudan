@@ -1,0 +1,72 @@
+package CaclulatorWithGuGuDan;
+
+public class GuGuDanControllor {
+	private GuGuDanModel modelGuGuDan;
+	private GuGuDanView viewGuGuDan;
+
+	public void GuGuDanController(GuGuDanModel modelGuGuDan, GuGuDanView viewGuGuDan) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		while (true) {
+		this.modelGuGuDan = modelGuGuDan;
+		this.viewGuGuDan = viewGuGuDan;
+		try {
+			String dan = Scanner.
+			
+		}
+
+
+	}
+	}
+
+	public void setValue(String value) {
+		modelGuGuDan.setValue(value);
+	}
+
+	public String getValue() {
+		return modelGuGuDan.getValue();
+	}
+
+	public void setDan(String dan) {
+		if (isInteger(dan)) {
+			int i = Integer.parseInt(dan);
+			if (i <= 0 || 9 < i) { // 범위 에러
+				modelGuGuDan.setErrorLimit();
+			} else {
+				modelGuGuDan.setDan(dan); // 올바른 값
+			}
+		} else { // 문자열
+			modelGuGuDan.setErrorChar();
+		}
+	}
+
+	public String getDan() {
+		return modelGuGuDan.getDan();
+	}
+
+	public void updateView() {
+		if (modelGuGuDan.isErrorLimit() == true) {
+			// 에러 시 화면 - 범위 벗어남
+			viewGuGuDan.printErrorLimit();
+
+		} else if (modelGuGuDan.isErrorChar() == true) {
+			// 에러 시 화면 - 문자열
+			viewGuGuDan.printErrorChar();
+		}
+
+		else {// 정상 출력
+			viewGuGuDan.printGuGuDan(modelGuGuDan.getDan(), modelGuGuDan.getValue());
+		}
+
+	}
+
+	public static boolean isInteger(String s) {
+		try { // 예외처리
+			Integer.parseInt(s);
+			return true;
+		} catch (NumberFormatException e) {
+			return false;
+		}
+	}
+}

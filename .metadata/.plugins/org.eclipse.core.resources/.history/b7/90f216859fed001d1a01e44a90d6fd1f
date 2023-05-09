@@ -1,0 +1,27 @@
+package NewCalculator;
+
+import java.util.Scanner;
+
+public class NewGuGuDanView {
+
+	private Scanner scanner;
+
+	public NewGuGuDanView() {
+		scanner = new Scanner(System.in);
+		int num = scanner;
+
+	}
+
+	public int getInput() {
+		System.out.print("몇 단을 출력하시겠습니까?");
+		return scanner.nextInt();
+	}
+
+	public void result(int[] table) {
+
+		for (int i = 0; i < table.length; i++) {
+			System.out.println((i+1) + " * " + num + " = " + table[i]);	
+		}
+	}
+
+}

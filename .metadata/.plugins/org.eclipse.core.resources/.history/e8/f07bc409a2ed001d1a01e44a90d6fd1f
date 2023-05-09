@@ -1,0 +1,25 @@
+package NewCalculator;
+
+public class NewGuGuDanController {
+	private NewGuGuDanModel model;
+	private NewGuGuDanView view;
+	
+	public NewGuGuDanController(NewGuGuDanModel model, NewGuGuDanView view) {
+		this.model = model;
+		this.view = view;
+		
+	}
+	
+	public NewGuGuDanController(NewGuGuDanModel model2, NewGuGuDanView view2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void run() {
+		int num = view.getInput();
+		model.setNum(num);
+		int[] table = model.calculateTable();
+		view.result(table);
+	}
+
+
+}

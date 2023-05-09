@@ -1,0 +1,7 @@
+package CaclulatorWithGuGuDan;
+
+public class CaclulatorCalcView {
+	public void printGuGuDan(String modelDan, String modelValue) {
+
+	}
+}

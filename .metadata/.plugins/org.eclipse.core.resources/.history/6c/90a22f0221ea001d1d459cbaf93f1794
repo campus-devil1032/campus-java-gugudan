@@ -1,0 +1,12 @@
+package Caclulator;
+
+public class CaclulatorView {
+    System.out.println("어떤 기능을 사용하실 건가요?");
+    System.out.println("1. 구구단");
+    System.out.println("2. 계산기");
+	
+	
+	
+	
+
+}

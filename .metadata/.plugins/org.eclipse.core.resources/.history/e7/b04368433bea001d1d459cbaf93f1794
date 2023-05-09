@@ -1,0 +1,61 @@
+package CaclulatorWithGuGuDan;
+
+public class CaclulatorCalcControllor {
+	private CaclulatorCalcModel modelCalc;
+	private CaclulatorCalcView viewCalc;
+	
+	public CaclulatorCalcControllor (CaclulatorCalcModel modelCalc, CaclulatorCalcView viewCalc) {
+		this.modelCalc = modelCalc;
+		this.viewCalc = viewCalc;
+	}
+	public void setValue(String value) {
+		modelCalc.setValue(value);
+	}
+
+	public String getValue() {
+		return modelCalc.getValue();
+	}
+
+	public void setDan(String dan) {
+		if (isInteger(dan)) {
+			int i = Integer.parseInt(dan);
+			if (i <= 0 || 999 < i) { // 범위 에러
+				modelCalc.setErrorLimit();
+			} else {
+				modelCalc.setDan(dan); // 올바른 값
+			}
+		} else { // 문자열
+			modelCalc.setErrorChar();
+		}
+	}
+
+	public String getDan() {
+		return modelCalc.getDan();
+	}
+
+	public void updateView() {
+		if (modelCalc.isErrorLimit()==true) {
+			   // 에러 시 화면 - 범위 벗어남
+			   viewCalc.printErrorLimit();
+			   
+			} else if(model.isErrorChar()==true) {
+				   // 에러 시 화면 - 문자열
+				viewCalc.printErrorChar();}
+		
+				else {// 정상 출력
+					viewCalc.printGuGuDan(modelCalc.getDan(), modelCalc.getValue());
+				}
+				
+			}
+
+	public static boolean isInteger(String s) {
+		try { // 예외처리
+			Integer.parseInt(s);
+			return true;
+		} catch (NumberFormatException e) {
+			return false;
+		}
+	}
+}
+
+}
