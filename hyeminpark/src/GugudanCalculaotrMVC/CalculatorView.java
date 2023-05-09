@@ -8,12 +8,14 @@ public class CalculatorView {
 	public CalculatorView() {
 		scanner = new Scanner(System.in);
 	}
-
+	
+	// 첫 번째 숫자 입력
 	public double getInputNum1() {
 		System.out.println("첫 번째 숫자를 입력하세요: ");
 		return getInput();
 	}
 	
+	// 연산자 입력
 	public String getInputOperator() {
 		System.out.println("연산자를 입력하세요: ");
 		String operator = scanner.next();
@@ -25,15 +27,18 @@ public class CalculatorView {
 		return operator;
 	}
 	
+	// 두 번째 숫자 입력
 	public double getInputNum2() {
 		System.out.println("두 번째 숫자를 입력하세요: ");
 		return getInput();
 	}
 	
+	// 계산 결과값 출력
 	public void printResult(double result) {
 		System.out.println("계산 결과: " + result);
 	}
 	
+	// 유효 연산자 검사
 	private boolean isValidOperator(String operator) {
 		return operator.equals("+")
 				|| operator.equals("-")
@@ -41,6 +46,7 @@ public class CalculatorView {
 				|| operator.equals("/");
 	}
 	
+	// 숫자 입력 값 검사
 	private double getInput() {
 		while(true) {
 			try {

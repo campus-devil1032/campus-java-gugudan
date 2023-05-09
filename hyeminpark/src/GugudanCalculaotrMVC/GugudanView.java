@@ -15,15 +15,17 @@ public class GugudanView {
 	public void run() {
 		int num = 0;
 		boolean isValidInput = false;
+		
+		// 구구단 단 수 입력
 		while(!isValidInput) {
 			System.out.println("출력할 구구단의 단 수를 입력하세요: ");
 			try {
 				String input = scanner.nextLine();
 				num = Integer.parseInt(input);
-				if (num < 1 || num > 999) {
+				if (num < 1 || num > 999) { // 1~999 이외의 값을 입력하면 Exception으로 throw
 					throw new NumberFormatException();
 				}
-				isValidInput = true;
+				isValidInput = true; //알맞은 값이 입력되면 반복문 탈출하도록
 			} catch (NumberFormatException e) {
 				System.out.println("1~999 사이의 값만 유효합니다.");
 			}

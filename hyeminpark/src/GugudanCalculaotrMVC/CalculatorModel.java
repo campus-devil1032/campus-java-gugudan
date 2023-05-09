@@ -58,12 +58,4 @@ public class CalculatorModel {
 		this.operator = operator;
 	}
 
-//	public int getResult() {
-//		return result;
-//	}
-//
-//	public void setResult(int result) {
-//		this.result = result;
-//	}
-
 }

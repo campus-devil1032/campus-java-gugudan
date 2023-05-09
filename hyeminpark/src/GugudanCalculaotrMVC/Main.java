@@ -27,15 +27,16 @@ public class Main {
 			}
 			
 			if (choice == 1) {
-				GugudanModel gmodel = new GugudanModel(2);
-		
-				GugudanController controllerFirst = new GugudanController(gmodel, null);
+				// 구구단 출력
+				GugudanModel model = new GugudanModel(2);
+				GugudanController controllerFirst = new GugudanController(model, null);
 				GugudanView viewFirst = new GugudanView(controllerFirst);
-				GugudanController controllerSecond = new GugudanController(gmodel,viewFirst);
-				GugudanView gview = new GugudanView(controllerSecond);
-				gview.run();
-				
+				GugudanController controllerSecond = new GugudanController(model,viewFirst);
+				GugudanView view = new GugudanView(controllerSecond);
+				view.run();
+			
 			} else if (choice == 2) {
+				// 계산기 출력
 				CalculatorModel model = new CalculatorModel();
 				CalculatorView view = new CalculatorView();
 				CalculatorController controller = new CalculatorController(model, view);
