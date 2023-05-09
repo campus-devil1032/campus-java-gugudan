@@ -1,10 +1,12 @@
+package Gugudan;
 
 public class Gugudanclass {
-	private int dan; 
-	private String userName; 
-	
-	public Gugudanclass(int dan) {
+	private int dan;
+	private String userName;
+
+	public Gugudanclass(int dan, String userName) {
 		this.dan = dan;
+		this.userName = userName;
 	}
 
 	public int getDan() {
@@ -12,7 +14,7 @@ public class Gugudanclass {
 	}
 
 	public String getUserName() {
-		return  "[Hello] " + userName; //Hello +  setUserName 입력 받은 내용 출력
+		return  userName; // setUserName 입력받은 내용 출력
 	}
 
 	public void setUserName(String userName) {
@@ -22,4 +24,5 @@ public class Gugudanclass {
 	public void setDan(int dan) {
 		this.dan = dan;
 	}
+	
 }
