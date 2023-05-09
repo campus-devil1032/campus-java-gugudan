@@ -109,8 +109,7 @@ public class Dto {
 	public void Gugu() {
 		Except.GuguException(input, this.Gugu_Dan);
 
-		for (int i = 1; i < 10; i++)
-			System.out.println(this.Gugu_Dan + "x" + i + "=" + Gugu_Dan * i);
+	
 	}
 	
 	

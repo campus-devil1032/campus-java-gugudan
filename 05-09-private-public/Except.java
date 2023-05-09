@@ -14,6 +14,8 @@ public class Except {
 				if(dan>999 || dan<1)
 					System.out.println("1 ~ 999까지의 정수 입력만 유효");
 				else
+					for (int i = 1; i < 10; i++)
+						System.out.println(dan + "x" + i + "=" + dan * i);
 					break;
 			}
 			
