@@ -19,10 +19,10 @@ public class MainWin {
 
 			int choice = sc.nextInt();
 			if (choice == 1) {
-				manager.service1();
+				manager.gugudan();
 				break;
 			} else if (choice == 2) {
-				manager.service2();
+				manager.calculator();
 				break;
 			} else if (choice == 3) {
 				System.out.println("종료합니다.");
