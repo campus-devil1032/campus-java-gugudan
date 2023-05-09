@@ -195,15 +195,6 @@ import java.util.Scanner;
 					countNum += 1;
 					str = "";
 					
-					/*result = Num[0];*/
-					/*need fix bottom line code +-X/   need priority() */
-					/** 사용하여 바꿀예정 근데 갈아엎어야해서 엄두가안남
-					 * priorityMDM[priorityMDMCount] = countSign;
-					 *	priorityMDMCount += 1;
-					 * ()사용한 우선순위도 추가해야함 나중에 다시 갈아엎어야함
-					 * substring을 사용하자.
-					 * 초기화부를 따로 구현해서 함수를 늘리고 코드길이 압축좀할까?
-					 */
 					//곱셈 나눗셈 나머지 우선연산
 					for(int j = 0; j<priorityMDMCount;j++) {
 						if (Sign[priorityMDM[j]] == '*') {
