@@ -1,12 +1,34 @@
 package Program;
 
-
 public class Pro {
 	private int dan;
 	private int a;
 	private int b;
 	private int s;
 	private String act = "";
+
+	void print1() {
+		System.out.println(dan + "단 출력.");
+		for (int i = 1; i < 10; i++) {
+			System.out.println(dan + "*" + i + "=" + dan * i);
+		}
+	}
+
+	void print2() {
+		System.out.println("계산 실행.");
+		if (act.equals("+")) {
+			System.out.println(a + "+" + b + "=" + (a + b));
+		} else if (act.equals("-")) {
+			System.out.println(a + "-" + b + "=" + (a - b));
+		} else if (act.equals("*")) {
+			System.out.println(a + "*" + b + "=" + (a * b));
+		} else if (act.equals("/")) {
+			System.out.println(a + "/" + b + "=" + (a / b));
+		} else {
+			System.out.println("알 수 없는 연산자입니다. ");
+		}
+
+	}
 
 	public Pro() {
 
@@ -60,26 +82,4 @@ public class Pro {
 		this.act = act;
 	}
 
-	public void print1() {
-		System.out.println(dan + "단 출력.");
-		for (int i = 1; i < 10; i++) {
-			System.out.println(dan + "*" + i + "=" + dan * i);
-		}
-	}
-
-	public void print2() {
-		System.out.println("계산 실행.");
-		if (act.equals("+")) {
-			System.out.println(a + "+" + b + "=" + (a + b));
-		} else if (act.equals("-")) {
-			System.out.println(a + "-" + b + "=" + (a - b));
-		} else if (act.equals("*")) {
-			System.out.println(a + "*" + b + "=" + (a * b));
-		} else if (act.equals("/")) {
-			System.out.println(a + "/" + b + "=" + (a / b));
-		} else {
-			System.out.println("알 수 없는 연산자입니다. ");
-		}
-
-	}
 }

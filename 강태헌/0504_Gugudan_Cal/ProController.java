@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ProController {
-	public void run() {
+	void run() {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("구구단을 실행하려면 숫자 1, 계산기를 실행하려면 숫자 2를 입력하요.");
@@ -38,6 +38,7 @@ public class ProController {
 				}
 
 				else if (s == 2) {
+
 					while (true) {
 
 						try {
@@ -61,6 +62,7 @@ public class ProController {
 							sc = new Scanner(System.in);
 							System.out.println("0으로 나눌 수 없습니다.");
 						}
+
 					}
 				} else {
 
