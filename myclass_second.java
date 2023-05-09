@@ -2,6 +2,10 @@
 package test1;
 
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class myclass_second {
 
@@ -17,13 +21,12 @@ public class myclass_second {
 		}
 		int x = scanner.nextInt();
 		int y = scanner.nextInt();
-
+		
 		System.out.println(x + " x " + y + " = " + (x * y));
 
-		if (x < 1 || x > 999 || y < 1 || y > 999) {
-			System.out.println("입력한 수가 범위를 벗어났습니다.");
-		}
-
+	}
+	public static boolean isInteger (String s) {
+		
 	}
 
 }
