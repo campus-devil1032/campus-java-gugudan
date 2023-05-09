@@ -3,20 +3,28 @@ package homework;
 import java.util.function.BiFunction;
 
 public class CalculatorModel {
-	public int a;				// 첫번째 값
-	public int b;				// 두번째 값
-	public int result;		// 결과 값
-	public String operatorValue;	// 연산자 
+	private int a;				// 첫번째 값
+	private int b;				// 두번째 값
+	private int result;		// 결과 값 - 결과값은 set제공X, 연산에 의한 결과만 제공
+	private String operatorValue;	// 연산자 
 	
 	public CalculatorModel(String input){	//생성자에 이렇게 모든 연산을 하는 것이 옳은 건진 모르겠음.
 		String[] number = input.split("");	//사용자 입력값 - 값은 뛰어쓰기 없이 식으로 넘어옴, 한글자씩 나눠서 별도의 값으로 저장
-		a = Integer.parseInt(number[0]);	//메인에 에러를를 처리하므로 여기서 굳이 또 throw  할 필요 없음 
+		this.a = Integer.parseInt(number[0]);	//메인에 에러를를 처리하므로 여기서 굳이 또 throw  할 필요 없음 
 		operatorValue = number[1];			//연산자 값도 함께 넘어옴
-		b = Integer.parseInt(number[2]);
+		this.b = Integer.parseInt(number[2]);
 		Operator op = Operator.findByOperator(operatorValue);
-		result = op.calculate(a, b);		//결과값까지 모두 넣기
+		this.result = op.calculate(a, b);		//결과값까지 모두 넣기
 	}
-	
+
+	public String getOperatorValue() {
+		return operatorValue;
+	}
+
+	public void setOperatorValue(String operatorValue) {
+		this.operatorValue = operatorValue;
+	}
+
 	public enum Operator{
 		PLUS("+",(num1, num2) -> (num1+num2)),	//Label(값1, 값2,...)
 		MINUS("-",(num1, num2) -> (num1-num2)),
@@ -49,4 +57,25 @@ public class CalculatorModel {
 			return this.name;
 		}
 	}
+	
+	public int getA() {
+		return a;
+	}
+
+	public void setA(int a) {
+		this.a = a;
+	}
+
+	public int getB() {
+		return b;
+	}
+
+	public void setB(int b) {
+		this.b = b;
+	}
+
+	public int getResult() {		
+		return result;
+	}
+
 }
