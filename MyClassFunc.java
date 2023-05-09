@@ -8,12 +8,11 @@ public class MyClassFunc {
 		int max = 0;
 		int min = 0;
 		int modType = 0;
-		ModeSelector c = new ModeSelector();
 		UserInputModel m = new UserInputModel();
 		GugudanView v = new GugudanView();
 
 		// 모드 선택부입니다.
-		modType = c.selectMod(sc);
+		modType = ModeSelector.selectMod(sc);
 
 		if (modType == 1) {
 			m.methodSetInputMinMax(sc);
@@ -26,16 +25,16 @@ public class MyClassFunc {
 
 		if (modType == 2) {
 			System.out.println("계산기구현중입니다.");
-			m.Calculation(sc);
+			m.calculation(sc);
 		}
 
 	}
 	//클래스에서 모드선택을 지원합니다.
 	public static class ModeSelector {
-		private String scc;
-		private int modType;
+		private static String scc;
+		private static int modType;
 
-		public int selectMod(Scanner sc) {
+		public static int selectMod(Scanner sc) {
 			System.out.println("기능을 선택해주세요. 1은 구구단, 2는 계산기입니다.");
 
 			while (true) {
