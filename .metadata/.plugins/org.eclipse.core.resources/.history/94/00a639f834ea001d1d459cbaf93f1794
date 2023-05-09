@@ -1,9 +1,0 @@
-package Caclulator;
-
-public class CaclulatorCalcControllor {
-	private CaclulatorCalcModel model;
-	private CaclulatorCalcView view;
-	
-	public CaclulatorCalcControllor (CaclulatorCalcModel model, CaclulatorCalcView view)
-
-}

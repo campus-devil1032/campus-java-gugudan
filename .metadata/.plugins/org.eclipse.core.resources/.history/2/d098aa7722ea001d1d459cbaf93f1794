@@ -1,7 +1,0 @@
-package Caclulator;
-
-public class CaclulatorView {
-	public void printGuGuDan(String modelDan, String modelValue) {
-
-	}
-}
