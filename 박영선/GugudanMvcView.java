@@ -1,22 +1,19 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GugudanMvcView {
-	private Scanner scanner;
-	
-	public GugudanMvcView() {
-		scanner = new Scanner(System.in);
-	}
-	
-	public int inputDan() throws InputMismatchException{
-		System.out.println("출력할 구구단을 입력하세요(1~999단까지) : ");
-		int dan = scanner.nextInt();
+	private Scanner scanner = new Scanner(System.in);
+
+	public int inputdan() {
+		System.out.print("구구단 몇단을 출력하시겠습니까 ? ");
+		int dan = Integer.parseInt(scanner.nextLine()); // 입력받은 값이 문자열로 정수로 변환하는 기능
 		return dan;
 	}
-	
-	public void output(int[] result) {
-		for(int i=1; i<=9; i++) {
-			System.out.println(result[i-1]);
-		}
+
+	public void outputResult(int dan, int[] result) {
+		System.out.println(dan + "단을 출력합니다.");
+        for (int i = 0; i < result.length; i++) {
+            System.out.printf("%d x %d = %d%n", dan, i + 1, result[i]);
+        }
 	}
+
 }
