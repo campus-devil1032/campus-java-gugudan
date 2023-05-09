@@ -7,9 +7,11 @@ public class Controller {
 	int c = 0;
 	Scanner scan = new Scanner(System.in);
 	
-	public int numberInput() {
-		c = scan.nextInt();
-		return c;
+	public void numberInput() {
+		c = scan.nextInt(); //여기서 구하고자 하는 구구단의 값을 입력해준다
+	}
+	public int numberOutput() {
+		return c; //이제 입력된 값이 쓰일 것!
 	}
 	
 }
