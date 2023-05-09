@@ -4,41 +4,41 @@ import java.io.InputStreamReader;
 
 public class Calculator {
 	private BufferedReader br;
-	private float a, b;
+	private float numFirst, numSecond;
 
 	public Calculator() {
 		br = new BufferedReader(new InputStreamReader(System.in));
-		a = getNum();
-		b = getNum();
+		numFirst = getNum();
+		numSecond = getNum();
 
 		calc();
 	}
 
 	private void calc() {
-		String c;
+		String operator;
 		System.out.println("원하는 연산을 입력해주세요 [+ - * / %]");
-		while (true) {
+		while (true) { // 연산자를 입력받고 연산을 수행해줌.
 			try {
-				c = br.readLine();
+				operator = br.readLine();
 			} catch (IOException e) {
-				c = "";
+				operator = "";
 				System.out.println("IOException!");
 			}
-			switch (c) { // 스위치문 종료시 함수밖으로 나가기위해 return 사용
+			switch (operator) { // 스위치문 종료시 함수밖으로 나가기위해 return 사용
 			case "+":
-				System.out.printf("%f %s %f = %f\n", a, c, b, a + b);
+				System.out.printf("%f %s %f = %f\n", numFirst, operator, numSecond, numFirst + numSecond);
 				return;
 			case "-":
-				System.out.printf("%f %s %f = %f\n", a, c, b, a - b);
+				System.out.printf("%f %s %f = %f\n", numFirst, operator, numSecond, numFirst - numSecond);
 				return;
 			case "*":
-				System.out.printf("%f %s %f = %f\n", a, c, b, a * b);
+				System.out.printf("%f %s %f = %f\n", numFirst, operator, numSecond, numFirst * numSecond);
 				return;
 			case "/":
-				System.out.printf("%f %s %f = %f\n", a, c, b, a / b);
+				System.out.printf("%f %s %f = %f\n", numFirst, operator, numSecond, numFirst/ numSecond);
 				return;
 			case "%":
-				System.out.printf("%f %s %f = %f\n", a, c, b, a % b);
+				System.out.printf("%f %s %f = %f\n", numFirst, operator, numSecond, numFirst % numSecond);
 				return;
 			}
 			System.out.println("연산자가 아닙니다. 다시입력해주세요.");

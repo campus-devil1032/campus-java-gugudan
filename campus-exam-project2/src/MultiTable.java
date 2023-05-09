@@ -16,7 +16,7 @@ public class MultiTable {
 				str = "0";
 				System.out.println("IOException!");
 			}
-			if (checkInteger(str)) {
+			if (validateInteger(str)) {
 				int temp = Integer.parseInt(str);
 				if (temp >= 1 && temp <= 999) {
 					this.store = temp;
@@ -30,7 +30,7 @@ public class MultiTable {
 		}
 	}
 
-	private boolean checkInteger(String s) {
+	private boolean validateInteger(String s) {
 		try {
 			Integer.parseInt(s);
 			return true;
@@ -39,9 +39,13 @@ public class MultiTable {
 		}
 	}
 
+	private int calc(int line) {
+		return store * line;
+	}
+
 	public void print() {
-		for (int i = 1; i < 10; i++) {
-			System.out.printf("%d x %d = %d\n", store, i, store * i);
+		for (int line = 1; line <= 9; line++) { // 구구단을 계산하면서 출력.
+			System.out.printf("%d x %d = %d\n", store, line, calc(line));
 		}
 	}
 }
