@@ -1,25 +1,16 @@
 package lotto_machine;
 
-import java.util.*;
+import java.util.TreeSet;
 
 public class LottoGame {
-    public static void main(String[] args) {
+    public void start() {
         InputManager inputManager = new InputManager();
-        OutputManager outputManager = new OutputManager();
-        LottoGenerator lottoGenerator = new LottoGenerator();
-        LottoChecker lottoChecker;
+        TreeSet<Integer> userNumbers = inputManager.getLottoNumbers();
 
-        Set<Integer> winningNumbers = lottoGenerator.generateLottoNumbers();
+        LottoNumberGenerator numberGenerator = new LottoNumberGenerator();
+        TreeSet<Integer> winningNumbers = numberGenerator.generateNumbers();
 
-        while (true) {
-            Set<Integer> playerNumbers = inputManager.getInputNumbers();
-            if (playerNumbers == null) {
-                outputManager.printInvalidInput();
-                continue;
-            }
-            lottoChecker = new LottoChecker(winningNumbers);
-            lottoChecker.checkLottoNumbers(playerNumbers);
-            break;
-        }
+        inputManager.waitForGameStart();
+        LottoChecker.checkNumbers(winningNumbers, userNumbers);
     }
 }
