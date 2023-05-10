@@ -1,55 +1,65 @@
 package project_0504;
 
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
-
 public class Calculator {
-	
-	private int op1, op2;
-	private String op;
+	private int op1, op2; // operand1, operand2
+	private String op; // operator
 	double result = 0;
-
-	public Calculator() {}
 	
-	public void calculate(String exp) {
-		
-		StringTokenizer st = new StringTokenizer(exp);
-		while(st.hasMoreTokens()){
-			op1 = Integer.parseInt(st.nextToken()); //operand1
-			op = st.nextToken(); //operator
-			op2 = Integer.parseInt(st.nextToken()); //operand2
-		}
-		
+	public Calculator(int op1, String op, int op2) { 
+		this.op1 = op1;
+		this.op = op;
+		this.op2 = op2;
+	}
+	
+	int add(int x, int y) {
+		int result = x + y;
+		return result;
+	}
+	
+	int sub(int x, int y) {
+		int result = x - y;
+		return result;
+	}
+	
+	int mul(int x, int y) {
+		int result = x * y;
+		return result;
+	}
+	
+	double div(double x, double y) {
+		double result = x / y;
+		return result;
+	}
+	
+	public void calculate() {
 		try {
 			switch(op) {
 			case "+":
-				result = op1 + op2;
+				result = add(op1, op2);
 				break;
 			case "-":
-				result = op1 - op2;
+				result = sub(op1, op2);
 				break;
 			case "*":
-				result = op1 * op2;
+				result = mul(op1, op2);
 				break;
 			case "/":
-				// ¼Ò¼öÁ¡±îÁö Ç¥½ÃÇÏ±â À§ÇØ double·Î °­Á¦ Çü º¯È¯ ÈÄ °è»ê
-				result = (double)op1 / (double)op2; 
-				isInfiniteOrNan((double)result);
+				result = div(op1, op2);
+				isInfiniteOrNan(result);
 				break;
 			default:
-				System.out.println("À¯È¿ÇÏÁö ¾ÊÀº ÀÔ·ÂÀÔ´Ï´Ù.\n");
+				System.out.println("ìœ íš¨í•˜ì§€ ì•Šì€ ì…ë ¥ì…ë‹ˆë‹¤.\n");
 				}
+			
 			if(!(op.equals("/"))) {
-				System.out.printf("%d %s %d = %d\n\n", op1, op, op2, (int)result);
+				System.out.printf("%d %s %d = %d\n", op1, op, op2, (int)result);
 			}else {
-				System.out.printf("%d %s %d = %.2f\n\n", op1, op, op2, result);
+				System.out.printf("%d %s %d = %.2f\n", op1, op, op2, result);
 			}
-		}catch (InputOutOfBoundsException e) { // 0À¸·Î ³ª´³À» ½Ã ¹ß»ı
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº ÀÔ·ÂÀÔ´Ï´Ù.\n");
+		}catch (InputOutOfBoundsException e) { // 0ìœ¼ë¡œ ë‚˜ëˆ´ì„ ë•Œ ë°œìƒ
+			System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
 		}catch (NumberFormatException e) {
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº ÀÔ·ÂÀÔ´Ï´Ù.\n");
-		}catch (NoSuchElementException e) { // ¿¬»êÀÚ³ª ÇÇ¿¬»êÀÚ ¹ÌÀÔ·Â ½Ã ¹ß»ı
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº ÀÔ·ÂÀÔ´Ï´Ù.\n");
+			System.out.println("ìœ íš¨í•˜ì§€ ì•Šì€ ì…ë ¥ì…ë‹ˆë‹¤.\n");
 		}
 	}
 	
@@ -57,13 +67,5 @@ public class Calculator {
 		if(Double.isInfinite(result) || Double.isNaN(result)) {
 			throw new InputOutOfBoundsException();
 		}
-	}
-}
-
-class InputOutOfBoundsException extends Exception {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
+	}	
 }

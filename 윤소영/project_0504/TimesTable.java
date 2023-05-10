@@ -11,21 +11,18 @@ public class TimesTable {
 	public void printTimesTable() {
 		try {
 			printTt(num);
-			System.out.println(num + "´ÜÀ» Ãâ·ÂÇÕ´Ï´Ù.");
+			System.out.println(num + "ë‹¨ì„ ì¶œë ¥í•©ë‹ˆë‹¤.");
 			for(int i=1; i<10; i++) {
-				System.out.println(num + " * " + i + " = " + num*i); // »ç¿ëÀÚ ÀÔ·Â°ªÀ» 1~9¿Í °öÇÑ ½Ä, °á°ú°ª Ãâ·Â
+				System.out.println(num + " * " + i + " = " + num*i); // ì‚¬ìš©ì ì…ë ¥ê°’ì„ 1~9ì™€ ê³±í•œ ì‹, ê²°ê³¼ê°’ ì¶œë ¥
 			}
-			System.out.println();
-		}catch(InputOutOfBoundsException e) {
-			System.out.println("1°ú 999 »çÀÌÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.\n");
+		}catch(InputOutOfBoundsException e) { // ì‚¬ìš©ì ì…ë ¥ê°’ì´ 1~999 ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ì„ ë•Œ ë°œìƒ
+			System.out.println("1ê³¼ 999 ì‚¬ì´ì˜ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n");
 		}
 	}
 	
-	// »ç¿ëÀÚ ÀÔ·Â°ªÀÌ 1~999 ¹üÀ§¸¦ ¹ş¾î³µÀ» ¶§ ¹ß»ı
-	public void printTt(int num) throws InputOutOfBoundsException { 
+	public static void printTt(int num) throws InputOutOfBoundsException { 
 		if (num <= 0 || num > 999) {
 			throw new InputOutOfBoundsException();
 		}
 	}
 }
-

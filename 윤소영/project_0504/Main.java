@@ -3,37 +3,62 @@ package project_0504;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args)throws IOException {
+	public static void main(String[] args) throws IOException {
+		int menuNum;
+		String exp;
+		int num;
 		
-		int menuNum = 1;
-		while(true) {
-			System.out.print("»ç¿ëÇÒ ±â´ÉÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.(0 ÀÔ·Â½Ã Á¾·á)\n1. °è»ê±â\n2. ±¸±¸´Ü Ãâ·Â\n> ");
+		while (true) {
+			System.out.print("ì‚¬ìš©í•  ê¸°ëŠ¥ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n1. ê³„ì‚°ê¸°\n2. êµ¬êµ¬ë‹¨ ì¶œë ¥\n3. ì¢…ë£Œ\n> ");
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			menuNum = Integer.parseInt(br.readLine());
+
+			if (menuNum == 1) { // ê³„ì‚°ê¸°
+				while (true) {
+					System.out.print("\nì—°ì‚°ì‹ì„ ì…ë ¥í•˜ì„¸ìš”. (ex. 1 + 2)\n(0 ì…ë ¥ ì‹œ ê³„ì‚°ê¸° ì¢…ë£Œ)\n> ");
+					exp = br.readLine();
+					if(exp.equals("0")) {
+						System.out.println();
+						break;
+					}else {
+						try{
+							StringTokenizer st = new StringTokenizer(exp);
+							int op1 = Integer.parseInt(st.nextToken());
+							String op = st.nextToken();
+							int op2 = Integer.parseInt(st.nextToken());
 	
-			if(menuNum == 1) { // °è»ê±â
-				System.out.print("°è»ê½ÄÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä. (ex. 1 + 2)\n> ");
-				String exp = br.readLine();
-				
-				Calculator calc = new Calculator();
-				calc.calculate(exp);
-				
-			}else if(menuNum == 2) { // ±¸±¸´Ü Ãâ·Â
-				int num = 0;
-				System.out.print("Ãâ·ÂÇÒ ´Ü ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä > ");
-				num = Integer.parseInt(br.readLine());
-				
-				TimesTable tt = new TimesTable(num);
-				tt.printTimesTable();
-				
-			}else if(menuNum == 0){ // 0 ÀÔ·Â½Ã while¹® ºüÁ®³ª°¡¸ç Á¾·á
+							Calculator calc = new Calculator(op1, op, op2);
+							calc.calculate();
+						}catch (NoSuchElementException e) { // ì—°ì‚°ìë‚˜ í”¼ì—°ì‚°ì ë¯¸ì…ë ¥í–ˆì„ ë•Œ ë°œìƒ
+							System.out.println("ì—°ì‚°ì‹ì„ ì •í™•í•˜ê²Œ ì…ë ¥í•˜ì„¸ìš”.\n");
+						}
+					}
+				}
+			} else if (menuNum == 2) { // êµ¬êµ¬ë‹¨ ì¶œë ¥
+				while (true) {
+					System.out.print("\nì¶œë ¥í•  ë‹¨ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n(0 ì…ë ¥ ì‹œ êµ¬êµ¬ë‹¨ ì¶œë ¥ ì¢…ë£Œ)\n> ");
+					num = Integer.parseInt(br.readLine());
+					if(num == 0) {
+						System.out.println();
+						break;
+					}else {
+						TimesTable tt = new TimesTable(num);
+						tt.printTimesTable();
+						}
+				}
+
+			} else if (menuNum == 3) { // 3 ì…ë ¥ ì‹œ ì „ì²´ ì¢…ë£Œ
 				break;
-			}else { // 0, 1, 2 ¿ÜÀÇ ¹øÈ£ ÀÔ·Â½Ã ¹øÈ£ ÀçÀÔ·Â ¿äÃ»
-				System.out.println("À¯È¿ÇÑ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.\n");
+			} else { // 1, 2, 3 ì™¸ì˜ ë²ˆí˜¸ ì…ë ¥ ì‹œ ë²ˆí˜¸ ì¬ì…ë ¥ ìš”ì²­
+				System.out.println("ìœ íš¨í•œ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n");
 			}
 		}
-	}
+	}	
 }
+
+class InputOutOfBoundsException extends Exception {}
