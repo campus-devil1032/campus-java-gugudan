@@ -3,6 +3,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class CalculatorController {
+    private CalculatorView view;
+
+    public CalculatorController(CalculatorView view) {
+        this.view = view;
+    }
+
     public void run() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("첫번째 연산할 숫자를 입력해 주세요 !");
@@ -17,9 +23,9 @@ public class CalculatorController {
             int num2 = Integer.parseInt(input2);
 
             char op = operator.charAt(0);
-            Calculator calculator = new Calculator(num1, num2, op);
+            Calculator calculator = new Calculator(num1, num2);
             calculator.setOp(op);
-            calculator.calculate();
+            view.printResult(calculator);
         }
         catch (NumberFormatException e){
             System.out.println(e);
