@@ -1,18 +1,12 @@
 package project_0504;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
 		int menuNum;
-		String exp;
-		int num;
 		Scanner sc = new Scanner(System.in);
 		
 		while (true) {
