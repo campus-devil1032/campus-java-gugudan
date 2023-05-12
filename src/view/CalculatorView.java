@@ -1,3 +1,7 @@
+package view;
+
+import model.Calculator;
+
 public class CalculatorView {
     /**
      * 계산 결과 출력

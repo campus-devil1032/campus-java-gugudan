@@ -1,3 +1,7 @@
+package view;
+
+import model.Gugudan;
+
 public class GugudanView {
     public void getInputMessage(){
         System.out.println("구구단을 출력하겠습니다 !");

@@ -1,3 +1,5 @@
+package model;
+
 public class Calculator {
     private int num1;
     private int num2;
@@ -5,7 +7,7 @@ public class Calculator {
 
     public Calculator() {
     }
-    public Calculator(int num1, int num2p) {
+    public Calculator(int num1, int num2) {
         this.num1 = num1;
         this.num2 = num2;
     }

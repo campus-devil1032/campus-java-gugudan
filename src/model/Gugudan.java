@@ -1,3 +1,5 @@
+package model;
+
 public class Gugudan {
     private int dan;
 
